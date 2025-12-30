@@ -74,13 +74,13 @@
 }
 
 .custom-input::placeholder {
-  color: #f0f0f0;
+  /*color: #f0f0f0; */
   opacity: 0.9;
 }
 
 .custom-input:focus {
   outline: none;
-  box-shadow: 0 0 10px #fff;
+   /*box-shadow: 0 0 10px #fff; */
   background: rgba(255,255,255,0.6);
 }
 

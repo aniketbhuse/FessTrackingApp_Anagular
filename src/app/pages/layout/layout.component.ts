@@ -1,11 +1,33 @@
-import { Component } from '@angular/core';
+import { Component, inject, Inject } from '@angular/core';
+import { RouterOutlet, RouterLink, Router } from '@angular/router';
+import { CommonModule, NgClass } from '@angular/common';
 
 @Component({
   selector: 'app-layout',
-  imports: [],
+  standalone: true,
+  imports: [RouterOutlet, RouterLink, NgClass,CommonModule],
   templateUrl: './layout.component.html',
-  styleUrl: './layout.component.css'
+  styleUrls: ['./layout.component.css']
 })
 export class LayoutComponent {
+  isOpen = true;
 
+  toggleSidebar() {
+    this.isOpen = !this.isOpen;
+  }
+
+  loggedUserData: any;
+  router = inject(Router);
+
+  constructor(){
+    const localData = localStorage.getItem("batchuser");
+    if(localData != null){
+      this.loggedUserData = JSON.parse(localData);
+    }
+  }
+
+  logout(){
+    localStorage.removeItem("batchuser");
+    this.router.navigateByUrl("login");
+  }
 }

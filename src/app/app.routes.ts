@@ -3,6 +3,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { LayoutComponent } from './pages/layout/layout.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { BatchMasterComponent } from './pages/batch-master/batch-master.component';
+import { StudentComponent } from './pages/student/student.component';
 
 export const routes: Routes = [
     {
@@ -15,17 +16,22 @@ export const routes: Routes = [
         component:LoginComponent
     },
     {
-        path:'admin',
+        path:'',
         component: LayoutComponent,
         children:[
+            {
+                path:'dashboard',
+                component: DashboardComponent
+            },
             {
                 path:'batch',
                 component: BatchMasterComponent
             },
             {
-                path:'dashboard',
-                component: DashboardComponent
+                path:'student',
+                component: StudentComponent
             }
+            
         ]
     }
 ];

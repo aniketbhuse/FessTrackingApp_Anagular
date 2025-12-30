@@ -1,1 +1,42 @@
-<p>layout works!</p>
+<div class="app-container">
+
+    <!-- Sidebar -->
+    <aside class="sidebar" [ngClass]="{ 'collapsed': !isOpen }">
+
+        <nav class="menu" style="margin-top: 50px;">
+            <a routerLink="/dashboard" routerLinkActive="active">
+                <span class="icon">📊</span><span *ngIf="isOpen">Dashboard</span>
+            </a>
+            <a routerLink="/student" routerLinkActive="active">
+                <span class="icon">👨‍🎓</span><span *ngIf="isOpen">Students</span>
+            </a>
+            <a routerLink="/batch" routerLinkActive="active">
+                <span class="icon">💳</span><span *ngIf="isOpen">Batch</span>
+            </a>
+            <a routerLink="/reports" routerLinkActive="active">
+                <span class="icon">📑</span><span *ngIf="isOpen">Fees</span>
+            </a>
+        </nav>
+
+    </aside>
+
+    <!-- Main Content -->
+    <main class="content" [ngClass]="{ 'expanded': !isOpen }">
+
+        <!-- Toggle Button -->
+        <button class="toggle-btn" (click)="toggleSidebar()">
+            {{ isOpen ? '☰' : '☷' }}
+        </button>
+
+
+        <!-- User Info & Logout -->
+        <div class="user-info">
+            <span class="user-name">{{loggedUserData.fullName}}</span>
+            <button class="logout-btn" (click)="logout()">Logout</button>
+        </div>
+
+
+        <router-outlet></router-outlet>
+    </main>
+
+</div>

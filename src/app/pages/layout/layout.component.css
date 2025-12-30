@@ -1,0 +1,119 @@
+/* Main layout container */
+.app-container {
+  display: flex;
+  height: 100vh;
+  background: linear-gradient(120deg, #e8eef7, #f4fafd);
+}
+
+/* Sidebar */
+.sidebar {
+  width: 240px;
+  background: #1f2430;
+  color: white;
+  transition: width 0.3s ease-in-out;
+  padding: 20px 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar.collapsed {
+  width: 70px;
+}
+
+/* Menu */
+.menu a {
+  display: flex;
+  align-items: center;
+  padding: 14px 12px;
+  margin: 6px 0;
+  color: rgb(216, 216, 216);
+  font-size: 15px;
+  border-radius: 8px;
+  text-decoration: none;
+  gap: 12px;
+  transition: 0.3s;
+}
+
+.menu a .icon {
+  font-size: 18px;
+}
+
+.menu a:hover,
+.menu a.active {
+  background: #4b5563;
+  color: white;
+}
+
+/* Main content page */
+.content {
+  flex: 1;
+  padding: 60px 40px;
+  transition: margin-left 0.3s ease-in-out;
+}
+
+/* Adjust content when collapsed */
+.content.expanded {
+  margin-left: -150px;
+}
+
+/* 🔘 Toggle Button */
+/* 🔘 Toggle Button Position Fix */
+.toggle-btn {
+  position: absolute;
+  top: 20px;
+  left: 20px; /* Line up with sidebar width */
+  transform: translateX(0);
+  background: #39404e;
+  color: white;
+  border: none;
+  padding: 10px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: 0.3s ease;
+  z-index: 1000;
+}
+
+/* When sidebar is collapsed, pull the button left */
+.sidebar.collapsed ~ .content .toggle-btn {
+     left: 15px;
+    margin-top: -11px;
+}
+
+/* Hover effect */
+.toggle-btn:hover {
+  background: #50596b;
+}
+
+
+/* USer Info and Log Out button CSS  */
+.user-info {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: Arial, sans-serif;
+}
+
+.user-name {
+    font-weight: bold;
+    color: #333;
+}
+
+.logout-btn {
+    padding: 5px 12px;
+    background-color: #f44336; /* red button */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.logout-btn:hover {
+    background-color: #d32f2f;
+}
