@@ -1,7 +1,7 @@
 /* Main layout container */
 .app-container {
   display: flex;
-  height: 100vh;
+ 
   background: linear-gradient(120deg, #e8eef7, #f4fafd);
 }
 
@@ -116,4 +116,38 @@
 
 .logout-btn:hover {
     background-color: #d32f2f;
+}
+
+/* Animated Title */
+.animated-title {
+    font-weight: 600;
+    color: #4b4b4b;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    animation: userBlinkSlide 4s ease-in-out infinite;
+}
+
+/* Looping Animation */
+@keyframes userBlinkSlide {
+    0% {
+        opacity: 0;
+        transform: translateX(10px);
+    }
+    20% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    50% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    80% {
+        opacity: 0;
+        transform: translateX(-10px);
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(10px);
+    }
 }
