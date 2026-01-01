@@ -4,34 +4,43 @@ import { LayoutComponent } from './pages/layout/layout.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { BatchMasterComponent } from './pages/batch-master/batch-master.component';
 import { StudentComponent } from './pages/student/student.component';
+import { authGuard } from './core/guard/auth.guard';
+import { CreateAccountComponent } from './pages/create-account/create-account.component';
 
 export const routes: Routes = [
     {
-        path:'',
-        redirectTo:'login',
-        pathMatch:'full'
+        path: '',
+        redirectTo: 'login',
+        pathMatch: 'full'
     },
     {
-        path:'login',
-        component:LoginComponent
+        path: 'login',
+        component: LoginComponent
     },
     {
-        path:'',
+        path: 'create-account',
+        component: CreateAccountComponent
+    },
+    {
+        path: '',
         component: LayoutComponent,
-        children:[
+        children: [
             {
-                path:'dashboard',
-                component: DashboardComponent
+                path: 'dashboard',
+                component: DashboardComponent,
+                canActivate: [authGuard]
             },
             {
-                path:'batch',
-                component: BatchMasterComponent
+                path: 'batch',
+                component: BatchMasterComponent,
+                canActivate: [authGuard]
             },
             {
-                path:'student',
-                component: StudentComponent
+                path: 'student',
+                component: StudentComponent,
+                canActivate: [authGuard]
             }
-            
+
         ]
     }
 ];

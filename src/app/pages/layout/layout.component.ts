@@ -1,6 +1,7 @@
 import { Component, inject, Inject } from '@angular/core';
 import { RouterOutlet, RouterLink, Router } from '@angular/router';
 import { CommonModule, NgClass } from '@angular/common';
+import { GlobalConstant } from '../../core/constant/Global.constant';
 
 @Component({
   selector: 'app-layout',
@@ -20,14 +21,14 @@ export class LayoutComponent {
   router = inject(Router);
 
   constructor(){
-    const localData = localStorage.getItem("batchuser");
+    const localData = localStorage.getItem(GlobalConstant.LOCAL_KEY_LOGIN);
     if(localData != null){
       this.loggedUserData = JSON.parse(localData);
     }
   }
 
   logout(){
-    localStorage.removeItem("batchuser");
+    localStorage.removeItem(GlobalConstant.LOCAL_KEY_LOGIN);
     this.router.navigateByUrl("login");
   }
 }
