@@ -6,7 +6,7 @@ import { GlobalConstant } from '../../core/constant/Global.constant';
 @Component({
   selector: 'app-layout',
   standalone: true,
-  imports: [RouterOutlet, RouterLink, NgClass,CommonModule],
+  imports: [RouterOutlet, RouterLink, CommonModule],
   templateUrl: './layout.component.html',
   styleUrls: ['./layout.component.css']
 })

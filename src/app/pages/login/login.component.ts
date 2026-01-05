@@ -7,12 +7,20 @@ import { GlobalConstant } from '../../core/constant/Global.constant';
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [FormsModule,RouterModule],
+  imports: [FormsModule, RouterModule],
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
- 
+
 })
 export class LoginComponent {
+
+  passwordType: string = 'password';
+
+  togglePassword() {
+    this.passwordType =
+      this.passwordType === 'password' ? 'text' : 'password';
+  }
+
 
   loginObj: any = {
     email: "",

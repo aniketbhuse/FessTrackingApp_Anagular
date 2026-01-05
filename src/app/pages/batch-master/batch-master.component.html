@@ -1,4 +1,330 @@
+<div class="min-h-screen flex flex-col bg-gray-50">
+  <!-- Header Section with gradient -->
+  <div class="bg-gradient-to-r from-purple-600  p-6 flex flex-col md:flex-row justify-between items-center gap-4">
+    <!-- Title -->
+    <div class="text-left">
+      <h1 class="text-3xl font-bold text-white">Batch Management</h1>
+      <p class="text-purple-200 mt-1">Manage and organize your batches list efficiently</p>
+    </div>
 
-<div class="dashboard-container">
-  <h1>batch-master works!</h1>
+    <!-- Buttons -->
+    <div class="flex flex-wrap gap-2 items-center">
+      <!-- Search -->
+     <button
+  class="flex items-center gap-2 px-6 py-2 bg-white text-gray-800 rounded-lg shadow
+         hover:bg-blue-50 hover:text-blue-600 transition-all duration-300
+         focus:outline-none focus:ring-2 focus:ring-blue-400 min-w-[180px]">
+
+  <!-- Modern Search Icon -->
+  <svg xmlns="http://www.w3.org/2000/svg"
+       class="h-5 w-5 transition-transform duration-300 group-hover:scale-110"
+       fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+      d="M21 21l-4.35-4.35m1.85-5.15
+         a7 7 0 11-14 0 7 7 0 0114 0z" />
+  </svg>
+  <span class="font-medium">Search</span>
+</button>
+
+      <!-- View Toggle -->
+      <div class="flex border rounded overflow-hidden">
+         <button
+    class="flex items-center justify-center p-2 rounded-lg transition-colors duration-200
+           hover:bg-blue-100 focus:outline-none"
+    [class.bg-blue-600]="viewMode==='card'"
+    [class.text-white]="viewMode==='card'"
+    [class.text-gray-700]="viewMode!=='card'"
+    (click)="toggleView('card')">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
+      <path d="M5 3a2 2 0 00-2 2v3h4V3H5zM13 3h-4v5h4V3zM3 12v3a2 2 0 002 2h3v-5H3zM12 12v5h3a2 2 0 002-2v-3h-5z" />
+    </svg>
+  </button>
+
+  <!-- Table View Button -->
+  <button
+    class="flex items-center justify-center p-2 rounded-lg transition-colors duration-200
+           hover:bg-blue-100 focus:outline-none"
+    [class.bg-blue-600]="viewMode==='table'"
+    [class.text-white]="viewMode==='table'"
+    [class.text-gray-700]="viewMode!=='table'"
+    (click)="toggleView('table')">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
+      <path d="M3 3h14v2H3V3zm0 4h14v2H3V7zm0 4h14v2H3v-2zm0 4h14v2H3v-2z" />
+    </svg>
+  </button>
+      </div>
+      
+
+      <!-- Create Batch -->
+      <button class="flex items-center gap-2 px-4 py-2 border-2 border-blue-600 text-blue-600 rounded shadow hover:bg-blue-50 hover:text-blue-700 transition"
+        (click)="openModal()">
+  <!-- SVG Icon: Plus inside a circle -->
+  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+    <circle cx="12" cy="12" r="10" />
+    <line x1="12" y1="8" x2="12" y2="16" />
+    <line x1="8" y1="12" x2="16" y2="12" />
+  </svg> Create Batch
+</button>
+
+    </div>
+  </div>
+
+  <!-- Content Section -->
+  <div class="min-h-screen flex flex-col bg-gray-50">
+
+    <!-- Content -->
+    <div class="flex-1 p-6">
+
+      <!-- ================= TABLE VIEW ================= -->
+      <div *ngIf="viewMode === 'table'" class="bg-white rounded-xl shadow-lg overflow-x-auto relative
+         before:absolute before:inset-0 before:bg-gradient-to-r
+         before:from-blue-50 before:via-white before:to-purple-50
+         before:animate-pulse before:opacity-40">
+
+        <table class="relative min-w-full divide-y divide-gray-200">
+          <thead class="bg-gradient-to-r from-blue-600 to-indigo-600 text-white">
+            <tr>
+              <th class="px-6 py-4 text-left">ID</th>
+              <th class="px-6 py-4 text-left">Batch Name</th>
+              <th class="px-6 py-4 text-left">Description</th>
+              <th class="px-6 py-4 text-left">Start</th>
+              <th class="px-6 py-4 text-left">End</th>
+              <th class="px-6 py-4 text-left">Status</th>
+              <th class="px-6 py-4 text-center">Action</th>
+            </tr>
+          </thead>
+
+          <tbody class="divide-y divide-gray-100">
+            <tr *ngFor="let batch of batchesList | slice:(page-1)*pageSize:page*pageSize" class="group transition-all duration-300
+               hover:bg-blue-50 hover:shadow-md hover:-translate-y-0.5">
+
+              <td class="px-6 py-4 font-medium text-gray-700">
+                {{ batch.batchId }}
+              </td>
+
+              <td class="px-6 py-4 text-gray-800">
+                {{ batch.batchName }}
+              </td>
+
+              <td class="px-6 py-4 text-gray-600">
+                {{ batch.description }}
+              </td>
+
+              <td class="px-6 py-4 text-gray-600">
+                {{ batch.startDate | date:'shortDate' }}
+              </td>
+
+              <td class="px-6 py-4 text-gray-600">
+                {{ batch.endDate | date:'shortDate' }}
+              </td>
+
+              <!-- STATUS WITH ICON -->
+              <td class="px-6 py-4">
+                <span class="flex items-center gap-2 font-medium"
+                  [ngClass]="batch.isActive ? 'text-green-600' : 'text-red-500'">
+
+                  <!-- Active Icon -->
+                  <svg *ngIf="batch.isActive" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none"
+                    viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4" />
+                  </svg>
+
+                  <!-- Inactive Icon -->
+                  <svg *ngIf="!batch.isActive" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none"
+                    viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+
+                  {{ batch.isActive ? 'Active' : 'Inactive' }}
+                </span>
+              </td>
+
+              <!-- ACTION ICONS -->
+              <td class="px-6 py-4">
+                <div class="flex justify-center gap-4 opacity-70 group-hover:opacity-100">
+
+                  <!-- EDIT -->
+                  <button class="p-2 rounded-full bg-blue-100 text-blue-600
+                     hover:bg-blue-600 hover:text-white transition-all duration-300">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                      stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M11 4h2M12 2v2m-7 7l9-9 4 4-9 9H5v-4z" />
+                    </svg>
+                  </button>
+
+                  <!-- DELETE -->
+                  <button class="p-2 rounded-full bg-red-100 text-red-600
+                     hover:bg-red-600 hover:text-white transition-all duration-300">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                      stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862
+                     a2 2 0 01-1.995-1.858L5 7m5-3h4m-4
+                     0a1 1 0 00-1 1v1h6V5a1 1 0 00-1-1m-4 0h4" />
+                    </svg>
+                  </button>
+
+                </div>
+              </td>
+
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+
+      <!-- ================= CARD VIEW ================= -->
+      <div *ngIf="viewMode === 'card'" class="mt-6">
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <div *ngFor="let batch of batchesList"
+      class="batch-card relative bg-white rounded-2xl border border-blue-300 shadow-sm p-6 transition-all">
+
+      <!-- Header -->
+      <div class="flex justify-between items-start">
+        <div>
+          <div class="flex items-center gap-3">
+            <h3 class="text-2xl font-bold text-blue-600">
+              {{ batch.batchName }}
+            </h3>
+          </div>
+
+          <p class="text-gray-600 mt-2 text-lg">
+            {{ batch.description }}
+          </p>
+
+          <div class="grid grid-cols-2 gap-y-3 gap-x-6 mt-4 text-gray-600">
+            <div class="flex items-center gap-2">
+              📅 <span><b>Start:</b> {{ batch.startDate | date:'MMM d, y' }}</span>
+            </div>
+            <div class="flex items-center gap-2">
+              📅 <span><b>End:</b> {{ batch.endDate | date:'MMM d, y' }}</span>
+            </div>
+            <div class="flex items-center gap-2 col-span-2">
+              🆔 <span><b>Batch ID:</b> #{{ batch.batchId }}</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex gap-3">
+          <button class="icon-btn bg-blue-100 text-blue-600">👁</button>
+          <button class="icon-btn bg-yellow-100 text-yellow-600">✏</button>
+          <button class="icon-btn bg-red-100 text-red-600">🗑</button>
+        </div>
+      </div>
+
+      <!-- Active/Inactive Badge at Bottom Right -->
+      <span class="absolute bottom-4 right-4 flex items-center gap-1 px-3 py-1 rounded-full text-sm font-medium"
+            [ngClass]="batch.isActive 
+            ? 'bg-green-100 text-green-700' 
+            : 'bg-gray-200 text-gray-600'">
+
+        <span class="w-4 h-4 rounded-full flex items-center justify-center bg-white text-xs">
+          ✔
+        </span>
+
+        {{ batch.isActive ? 'Active' : 'Inactive' }}
+      </span>
+    </div>
+  </div>
+</div>
+
+
+
+      <!-- ================= PAGINATION ================= -->
+      <div *ngIf="batchesList.length > pageSize" class="mt-6 flex justify-center">
+        <button class="px-3 py-1 border" [disabled]="page === 1" (click)="page = page - 1">
+          Prev
+        </button>
+
+        <span class="px-4 py-1">{{ page }}</span>
+
+        <button class="px-3 py-1 border" [disabled]="page >= batchesList.length / pageSize" (click)="page = page + 1">
+          Next
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- Modal (Tailwind + Angular) -->
+ <div *ngIf="isModalOpen" class="fixed inset-0 z-50 flex items-center justify-center bg-black/60 px-3 sm:px-0 transition-opacity duration-500">
+  <div class="bg-white w-full sm:max-w-lg rounded-2xl shadow-2xl max-h-[90vh] overflow-y-auto transform transition-transform duration-300 hover:scale-105">
+    
+    <!-- Header -->
+    <div class="flex items-center justify-between bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-4 py-3 sm:px-6 sm:py-4 rounded-t-2xl relative">
+  <h2 class="text-base sm:text-lg font-semibold relative overflow-hidden">
+    <span class="inline-block fade-slide">
+      <svg xmlns="http://www.w3.org/2000/svg" class="inline h-5 w-5 mr-1 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3" />
+      </svg>
+      Create New Batch
+    </span>
+  </h2>
+  <button class="text-xl font-bold hover:rotate-90 transition-transform duration-300" (click)="closeModal()">
+    &times;
+  </button>
+</div>
+
+<style>
+  @keyframes fade-slide {
+    0%, 100% { opacity: 0; transform: translateY(-10px); }
+    50% { opacity: 1; transform: translateY(0); }
+  }
+  .fade-slide {
+    animation: fade-slide 3s ease-in-out infinite;
+  }
+</style>
+
+    <!-- Body -->
+    <div class="px-4 py-5 sm:px-6 sm:py-6 space-y-4">
+      <form>
+
+        <!-- Batch Name -->
+        <div class="mb-4 hover:shadow-lg hover:bg-gray-50 transition p-2 rounded-lg">
+          <label class="block text-sm font-medium text-gray-700 mb-1">Batch Name</label>
+          <input [(ngModel)]="newBatchObj.batchName" name="batchName"
+            class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition" />
+        </div>
+
+        <!-- Description -->
+        <div class="mb-4 hover:shadow-lg hover:bg-gray-50 transition p-2 rounded-lg">
+          <label class="block text-sm font-medium text-gray-700 mb-1">Description</label>
+          <textarea rows="3" [(ngModel)]="newBatchObj.description" name="description" 
+            class="w-full px-3 py-2 border rounded-lg resize-none focus:outline-none focus:ring-2 focus:ring-blue-500 transition"></textarea>
+        </div>
+
+        <!-- Start Date -->
+        <div class="mb-4 hover:shadow-lg hover:bg-gray-50 transition p-2 rounded-lg flex items-center">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3M3 11h18M5 19h14a2 2 0 002-2V7H3v10a2 2 0 002 2z" />
+          </svg>
+          <input type="date" [(ngModel)]="newBatchObj.startDate" name="startDate" 
+            class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition" />
+        </div>
+
+        <!-- End Date -->
+        <div class="mb-4 hover:shadow-lg hover:bg-gray-50 transition p-2 rounded-lg flex items-center">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3M3 11h18M5 19h14a2 2 0 002-2V7H3v10a2 2 0 002 2z" />
+          </svg>
+          <input type="date" [(ngModel)]="newBatchObj.endDate" name="endDate" 
+            class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition" />
+        </div>
+
+        <!-- Active -->
+        <div class="flex items-center mb-6 hover:bg-gray-50 p-2 rounded-lg transition">
+          <input type="checkbox" [(ngModel)]="newBatchObj.isActive" name="isActive" class="w-5 h-5 text-blue-600 rounded" />
+          <label class="ml-2 text-sm text-gray-700">Active</label>
+        </div>
+
+        <!-- Footer Button -->
+        <button type="submit" (click)="submitBatch()"
+          class="w-full border-2 border-green-600 text-green-600 py-2.5 rounded font-semibold transition hover:bg-green-50 active:scale-95">
+          Save
+        </button>
+
+      </form>
+    </div>
+  </div>
 </div>

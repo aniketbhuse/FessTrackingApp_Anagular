@@ -1,0 +1,21 @@
+:host {
+  display: block;
+}
+
+button:disabled {
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+
+.icon {
+  width: 28px;
+  height: 28px;
+  stroke: white;
+  stroke-width: 1.5;
+  fill: none;
+}
+
+.group:hover .icon {
+  stroke: white;
+}

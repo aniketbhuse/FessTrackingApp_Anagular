@@ -1,153 +1,244 @@
-/* Main layout container */
+/* ===============================
+   ROOT
+================================ */
 .app-container {
   display: flex;
- 
+  min-height: 100vh;
   background: linear-gradient(120deg, #e8eef7, #f4fafd);
 }
 
-/* Sidebar */
+/* ===============================
+   SIDEBAR
+================================ */
 .sidebar {
   width: 240px;
   background: #1f2430;
   color: white;
-  transition: width 0.3s ease-in-out;
   padding: 20px 10px;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
+  transition: width 0.3s ease;
 }
 
 .sidebar.collapsed {
   width: 70px;
 }
 
-/* Menu */
+/* ===============================
+   MENU
+================================ */
 .menu a {
+  position: relative;
   display: flex;
   align-items: center;
+  gap: 12px;
   padding: 14px 12px;
   margin: 6px 0;
-  color: rgb(216, 216, 216);
-  font-size: 15px;
-  border-radius: 8px;
+  color: #d8d8d8;
   text-decoration: none;
-  gap: 12px;
+  border-radius: 8px;
   transition: 0.3s;
 }
 
-.menu a .icon {
-  font-size: 18px;
+/* LEFT INDICATOR */
+.menu .indicator {
+  position: absolute;
+  left: 0;
+  top: 10%;
+  width: 4px;
+  height: 80%;
+  background: transparent;
+  border-radius: 4px;
 }
 
-.menu a:hover,
 .menu a.active {
+  background: #ffffff;
+  color: #1f2430;
+}
+
+.menu a.active .indicator {
+  background: linear-gradient(135deg, #ff9800, #f44336);
+}
+
+.menu a:hover {
   background: #4b5563;
   color: white;
 }
 
-/* Main content page */
+.menu .icon {
+  font-size: 18px;
+}
+
+/* ===============================
+   CONTENT
+================================ */
 .content {
   flex: 1;
-  padding: 60px 40px;
-  transition: margin-left 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
 }
 
-/* Adjust content when collapsed */
-.content.expanded {
-  margin-left: -150px;
+/* ===============================
+   HEADER (FIXED)
+================================ */
+.top-header {
+  position: fixed;
+  top: 0;
+  left: 240px;
+  right: 0;
+  height: 70px;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 30px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  z-index: 1000;
+  transition: left 0.3s ease;
 }
 
-/* 🔘 Toggle Button */
-/* 🔘 Toggle Button Position Fix */
+.sidebar.collapsed ~ .content .top-header {
+  left: 70px;
+}
+
+/* ===============================
+   PAGE BODY
+================================ */
+.page-body {
+  margin-top: 72px;
+  /*padding: 30px; */
+}
+
+/* ===============================
+   TOGGLE BUTTON
+================================ */
 .toggle-btn {
-  position: absolute;
-  top: 20px;
-  left: 20px; /* Line up with sidebar width */
-  transform: translateX(0);
   background: #39404e;
   color: white;
   border: none;
-  padding: 10px 12px;
+  padding: 8px 14px;
   border-radius: 8px;
   cursor: pointer;
   font-size: 18px;
-  transition: 0.3s ease;
-  z-index: 1000;
 }
 
-/* When sidebar is collapsed, pull the button left */
-.sidebar.collapsed ~ .content .toggle-btn {
-     left: 15px;
-    margin-top: -11px;
-}
-
-/* Hover effect */
-.toggle-btn:hover {
-  background: #50596b;
-}
-
-
-/* USer Info and Log Out button CSS  */
+/* ===============================
+   USER INFO
+================================ */
 .user-info {
-    position: absolute;
-    top: 10px;
-    right: 20px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-family: Arial, sans-serif;
+  display: flex;
+  align-items: center;
+  gap: 16px;
 }
 
 .user-name {
-    font-weight: bold;
-    color: #333;
+  font-weight: 600;
+  color: #333;
 }
 
-.logout-btn {
-    padding: 5px 12px;
-    background-color: #f44336; /* red button */
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 14px;
-    transition: background-color 0.3s ease;
+/* ===============================
+   LOGOUT BUTTON (IMAGE STYLE)
+================================ */
+.logout-btn-outline {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 22px;
+  background: white;
+  border-radius: 40px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  cursor: pointer;
+  border: 2px solid transparent;
+
+  /* EXACT IMAGE GRADIENT */
+  background-image:
+    linear-gradient(white, white),
+    linear-gradient(135deg, #1abc9c, #2c5fd5);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+
+  color: #1abc9c;
+  transition: all 0.3s ease;
 }
 
-.logout-btn:hover {
-    background-color: #d32f2f;
+.logout-btn-outline:hover {
+  transform: scale(1.05);
 }
 
-/* Animated Title */
+/* Icon */
+.logout-icon {
+  font-size: 16px;
+  color: #2c5fd5;
+}
+
+/* Text */
+.logout-text {
+  font-size: 14px;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .logout-btn-outline {
+    padding: 6px 18px;
+    font-size: 13px;
+  }
+}
+
+/* ===============================
+   MOBILE
+================================ */
+@media (max-width: 768px) {
+  .logout-btn-outline {
+    padding: 6px 18px;
+    font-size: 13px;
+  }
+}
+
+
+/* ===============================
+   ANIMATION
+================================ */
 .animated-title {
-    font-weight: 600;
-    color: #4b4b4b;
-    display: inline-flex;
-    align-items: center;
-    gap: 5px;
-    animation: userBlinkSlide 4s ease-in-out infinite;
+  animation: userBlinkSlide 4s infinite;
 }
 
-/* Looping Animation */
 @keyframes userBlinkSlide {
-    0% {
-        opacity: 0;
-        transform: translateX(10px);
-    }
-    20% {
-        opacity: 1;
-        transform: translateX(0);
-    }
-    50% {
-        opacity: 1;
-        transform: translateX(0);
-    }
-    80% {
-        opacity: 0;
-        transform: translateX(-10px);
-    }
-    100% {
-        opacity: 0;
-        transform: translateX(10px);
-    }
+  0% { opacity: 0; transform: translateX(10px); }
+  20% { opacity: 1; transform: translateX(0); }
+  50% { opacity: 1; }
+  80% { opacity: 0; transform: translateX(-10px); }
+  100% { opacity: 0; transform: translateX(10px); }
 }
+
+/* ===============================
+   MOBILE
+================================ */
+@media (max-width: 768px) {
+
+  .sidebar {
+    position: fixed;
+    left: -260px;
+    top: 0;
+    height: 100%;
+    z-index: 999;
+  }
+
+  .sidebar:not(.collapsed) {
+    left: 0;
+  }
+
+  .top-header {
+    left: 0;
+  }
+
+  .page-body {
+    padding: 20px;
+  }
+
+  .user-info {
+    flex-direction: column;
+    align-items: flex-end;
+  }
+}
+
+
+

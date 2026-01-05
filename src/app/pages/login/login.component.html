@@ -1,4 +1,4 @@
-<!-- login.component.html -->
+<!-- Background -->
 <div class="animated-bg"></div>
 
 <div class="login-container">
@@ -8,28 +8,63 @@
     <h1 class="animated-title">Student Management System</h1>
     <p class="signin-label">Sign In</p>
 
-    <form >
+    <form>
       <label>Username</label>
-      <input type="text" name="username" placeholder="Enter your username" [(ngModel)]="loginObj.email" #usernameField="ngModel"  required >
-    
+      <input
+        type="text"
+        name="username"
+        placeholder="Enter your username"
+        [(ngModel)]="loginObj.email"
+        #usernameField="ngModel"
+        required
+      />
 
-      <label>Password</label>
-      <input type="password" name="password" placeholder="Enter your password" [(ngModel)]="loginObj.password" #passwordField="ngModel" required>
-      
+     <label>Password</label>
 
-      <button type="submit" class="btn-login" (click)="onLogin()">SIGN IN</button>
+<div style="position: relative;">
+  <input
+    [type]="passwordType"
+    name="password"
+    placeholder="Enter your password"
+    [(ngModel)]="loginObj.password"
+    required
+  />
+
+  <span
+    style="
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      cursor: pointer;
+      user-select: none;
+      font-size: 14px;
+    "
+    (click)="togglePassword()"
+  >
+    {{ passwordType === 'password' ? '👁️' : '🙈' }}
+  </span>
+</div>
+
+
+      <button type="submit" class="btn-login" (click)="onLogin()">
+        SIGN IN
+      </button>
+
       <a href="#" class="forgot">Forgot password?</a>
     </form>
   </div>
 
-  <!-- Divider -->
+  <!-- Divider (Hidden on mobile) -->
   <div class="divider"></div>
 
   <!-- Right Section -->
   <div class="right-section">
-    <h3>Don't have an account?<br>No problem, create one now</h3>
-    <a routerLink="/create-account" class="btn-create" >CREATE ACCOUNT</a>
+    <h3>
+      Don't have an account?<br />
+      No problem, create one now
+    </h3>
+    <a routerLink="/create-account" class="btn-create">CREATE ACCOUNT</a>
   </div>
 
 </div>
-

@@ -6,20 +6,25 @@ import { BatchMasterComponent } from './pages/batch-master/batch-master.componen
 import { StudentComponent } from './pages/student/student.component';
 import { authGuard } from './core/guard/auth.guard';
 import { CreateAccountComponent } from './pages/create-account/create-account.component';
+import { HomeComponent } from './pages/home/home.component';
 
 export const routes: Routes = [
     {
         path: '',
-        redirectTo: 'login',
+        redirectTo: 'home',
         pathMatch: 'full'
     },
-    {
-        path: 'login',
-        component: LoginComponent
+     {
+        path: 'home',
+        component: HomeComponent
     },
     {
         path: 'create-account',
         component: CreateAccountComponent
+    },
+    {
+        path: 'login',
+        component: LoginComponent
     },
     {
         path: '',
