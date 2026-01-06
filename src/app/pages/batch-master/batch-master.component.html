@@ -154,7 +154,7 @@
                   </button>
 
                   <!-- DELETE -->
-                  <button class="p-2 rounded-full bg-red-100 text-red-600
+                  <button (click)="delete(batch.batchId)" class="p-2 rounded-full bg-red-100 text-red-600 
                      hover:bg-red-600 hover:text-white transition-all duration-300">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
                       stroke="currentColor">
@@ -207,8 +207,8 @@
 
         <div class="flex gap-3">
           <button class="icon-btn bg-blue-100 text-blue-600">👁</button>
-          <button class="icon-btn bg-yellow-100 text-yellow-600">✏</button>
-          <button class="icon-btn bg-red-100 text-red-600">🗑</button>
+          <button (click)="updateBatch(batch.batchId, batch)" class="icon-btn bg-yellow-100 text-yellow-600">✏</button>
+          <button (click)="delete(batch.batchId)" class="icon-btn bg-red-100 text-red-600">🗑</button>
         </div>
       </div>
 
@@ -249,7 +249,7 @@
 
   <!-- Modal (Tailwind + Angular) -->
  <div *ngIf="isModalOpen" class="fixed inset-0 z-50 flex items-center justify-center bg-black/60 px-3 sm:px-0 transition-opacity duration-500">
-  <div class="bg-white w-full sm:max-w-lg rounded-2xl shadow-2xl max-h-[90vh] overflow-y-auto transform transition-transform duration-300 hover:scale-105">
+  <div class="bg-white w-full mt-5 sm:max-w-lg rounded-2xl shadow-2xl max-h-[90vh] overflow-y-auto transform transition-transform duration-300 hover:scale-105">
     
     <!-- Header -->
     <div class="flex items-center justify-between bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-4 py-3 sm:px-6 sm:py-4 rounded-t-2xl relative">
@@ -295,6 +295,8 @@
         </div>
 
         <!-- Start Date -->
+         
+          <label class="block text-sm font-medium text-gray-700 mb-1">Start Date</label>
         <div class="mb-4 hover:shadow-lg hover:bg-gray-50 transition p-2 rounded-lg flex items-center">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3M3 11h18M5 19h14a2 2 0 002-2V7H3v10a2 2 0 002 2z" />
@@ -304,6 +306,7 @@
         </div>
 
         <!-- End Date -->
+         <label class="block text-sm font-medium text-gray-700 mb-1">End Date</label>
         <div class="mb-4 hover:shadow-lg hover:bg-gray-50 transition p-2 rounded-lg flex items-center">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3M3 11h18M5 19h14a2 2 0 002-2V7H3v10a2 2 0 002 2z" />

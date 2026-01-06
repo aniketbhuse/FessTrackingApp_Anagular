@@ -22,4 +22,19 @@ export class BatchServiceService {
     return this.http.get<IAPIResponse>(environment.apiUrl + ApiMethodsConstant.BATCH);
   }
 
+  updateBatch(batchId: number, obj: BatchModel): Observable<IAPIResponse> {
+  debugger;
+  return this.http.put<IAPIResponse>(
+    `${environment.apiUrl}${ApiMethodsConstant.BATCH}/${batchId}`,
+    obj
+  );
+}
+
+  deleteBatch(batchId: number): Observable<IAPIResponse> {
+    return this.http.delete<IAPIResponse>(`${environment.apiUrl}${ApiMethodsConstant.BATCH}/${batchId}`
+    );
+  }
+
+
+
 }

@@ -19,6 +19,9 @@ import { IAPIResponse } from '../../core/model/interfaces/batch.model';
   styleUrl: './batch-master.component.css'
 })
 export class BatchMasterComponent {
+updateBatch(arg0: number,_t73: BatchModel) {
+throw new Error('Method not implemented.');
+}
 
   newBatchObj: BatchModel = new BatchModel()
   batchsrv = inject(BatchServiceService);
@@ -65,7 +68,8 @@ loadBatches() {
       next: (result: IAPIResponse) => {
         debugger;
         if (result.result) {
-          alert("Batch Created Sucessfully..!")
+          alert("Batch Created Sucessfully..!");
+          this.closeModal();
         }
       },
       error: (error) => {
@@ -75,6 +79,25 @@ loadBatches() {
     })
   }
 
+  delete(batchId: number) {
+  if (confirm('Are you sure you want to delete this batch?')) {
+    this.batchsrv.deleteBatch(batchId).subscribe(res => {
+      if (res.result) {
+        this.loadBatches();
+      }
+    });
+  }
+
+  this.batchsrv.updateBatch(this.newBatchObj.batchId, this.newBatchObj)
+  .subscribe(res => {
+    if (res.result) {
+      this.loadBatches();
+      this.closeModal();
+    }
+  });
+}
+
+
   isModalOpen = false;
   openModal() {
     this.isModalOpen = true;
@@ -83,9 +106,6 @@ loadBatches() {
     this.isModalOpen = false;
   }
 
-
-
-  
 
   formatDate(date: string | Date): string {
     return new Date(date).toLocaleDateString();

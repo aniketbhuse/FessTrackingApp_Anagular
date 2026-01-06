@@ -1,32 +1,94 @@
-/* Animated background gradient */
-.dashboard-container {
+ @keyframes slideInUp {
+          from {
+            opacity: 0;
+            transform: translateY(30px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        @keyframes fade-in {
+          from {
+            opacity: 0;
+            transform: translateY(-10px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        .animate-fade-in {
+          animation: fade-in 0.6s ease-out;
+        }
+
+        @keyframes pulse-slow {
+          0%, 100% {
+            opacity: 1;
+          }
+          50% {
+            opacity: 0.6;
+          }
+        }
+
+        .animate-pulse-slow {
+          animation: pulse-slow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+
+        .batch-card {
+          transform-origin: center;
+        }
+
+        .action-btn {
+          transform-origin: center;
+        }
+
+
+        .icon-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.icon-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+}
+
+
+.batch-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.batch-card::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 4px;
+  width: 0%;
+  background: linear-gradient(
+    90deg,
+    #2563eb,
+    #06b6d4
+  );
+  transition: width 0.35s ease;
+}
+
+.batch-card:hover::after {
   width: 100%;
-  height: 100vh;
-  padding: 40px;
-  margin-left: 10px;
-  animation: gradientShift 10s ease infinite;
-  background: linear-gradient(120deg, #dfe9f3, #f6f9fc, #e1ecff, #ffffff);
-  background-size: 300% 300%;
-  transition: all .3s ease;
-  border-radius: 10px;
 }
 
-/* Keyframes for animation */
-@keyframes gradientShift {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-/* Text styling (optional) */
-h1 {
-  font-size: 20px;
-  font-weight: 600;
-  color: #2c3e50;
-  animation: fadeIn .8s ease-in-out;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
+/* Optional lift on hover */
+.batch-card:hover {
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+  transform: translateY(-2px);
 }
