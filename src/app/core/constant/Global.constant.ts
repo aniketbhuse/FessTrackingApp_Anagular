@@ -5,5 +5,6 @@ export const GlobalConstant = {
 export const ApiMethodsConstant = {
     BATCH: 'Batches',
     ENROLLMENTS: '',
-    SESSIONS: ''
+    SESSIONS: '',
+    CANDIDATES: 'candidates'
 }

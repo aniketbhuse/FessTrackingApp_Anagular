@@ -28,10 +28,11 @@ export class BatchServiceService {
     `${environment.apiUrl}${ApiMethodsConstant.BATCH}/${batchId}`,
     obj
   );
-}
+  }
 
   deleteBatch(batchId: number): Observable<IAPIResponse> {
-    return this.http.delete<IAPIResponse>(`${environment.apiUrl}${ApiMethodsConstant.BATCH}/${batchId}`
+    return this.http.delete<IAPIResponse>(
+      `${environment.apiUrl}${ApiMethodsConstant.BATCH}/${batchId}`
     );
   }
 

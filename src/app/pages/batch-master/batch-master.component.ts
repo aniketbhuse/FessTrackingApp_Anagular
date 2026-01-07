@@ -19,9 +19,6 @@ import { IAPIResponse } from '../../core/model/interfaces/batch.model';
   styleUrl: './batch-master.component.css'
 })
 export class BatchMasterComponent {
-updateBatch(arg0: number,_t73: BatchModel) {
-throw new Error('Method not implemented.');
-}
 
   newBatchObj: BatchModel = new BatchModel()
   batchsrv = inject(BatchServiceService);
@@ -32,7 +29,6 @@ throw new Error('Method not implemented.');
   pageSize: number = 10;
   batchForm: FormGroup;
 
-  //private apiUrl = 'https://feestracking.freeprojectapi.com/api/Batches';
   Math: any;
 
   constructor(private http: HttpClient, private fb: FormBuilder) {
@@ -45,13 +41,13 @@ throw new Error('Method not implemented.');
     });
   }
 
-   ngOnInit(): void {
+  ngOnInit(): void {
     this.loadBatches();
   }
 
-loadBatches() {
+  loadBatches() {
     this.batchsrv.getAllBatch().subscribe({
-      next:(result:IAPIResponse)=> {
+      next: (result: IAPIResponse) => {
         this.batchesList = result.data
       }
 
@@ -63,10 +59,9 @@ loadBatches() {
   }
 
   submitBatch() {
-    debugger;
     this.batchsrv.createNewBatch(this.newBatchObj).subscribe({
       next: (result: IAPIResponse) => {
-        debugger;
+
         if (result.result) {
           alert("Batch Created Sucessfully..!");
           this.closeModal();
@@ -80,22 +75,14 @@ loadBatches() {
   }
 
   delete(batchId: number) {
-  if (confirm('Are you sure you want to delete this batch?')) {
-    this.batchsrv.deleteBatch(batchId).subscribe(res => {
-      if (res.result) {
-        this.loadBatches();
-      }
-    });
-  }
-
-  this.batchsrv.updateBatch(this.newBatchObj.batchId, this.newBatchObj)
-  .subscribe(res => {
-    if (res.result) {
-      this.loadBatches();
-      this.closeModal();
+    if (confirm('Are you sure you want to delete this batch?')) {
+      this.batchsrv.deleteBatch(batchId).subscribe(res => {
+        if (res.result) {
+          this.loadBatches();
+        }
+      });
     }
-  });
-}
+  }
 
 
   isModalOpen = false;
