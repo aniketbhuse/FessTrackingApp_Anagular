@@ -14,7 +14,7 @@ export class StudentServiceService {
  http = inject(HttpClient);
 
   createNewStudent(obj: StudentModel): Observable<IAPIResponse>{
-    debugger;
+    
     return this.http.post<IAPIResponse>(environment.apiUrl + ApiMethodsConstant.CANDIDATES, obj)
   }
 
@@ -23,7 +23,7 @@ export class StudentServiceService {
   }
 
   updateStudent(batchId: number, obj: StudentModel): Observable<IAPIResponse> {
-  debugger;
+  
   return this.http.put<IAPIResponse>(
     `${environment.apiUrl}${ApiMethodsConstant.CANDIDATES}/${batchId}`,
     obj

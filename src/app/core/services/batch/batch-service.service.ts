@@ -14,7 +14,6 @@ export class BatchServiceService {
   http = inject(HttpClient);
 
   createNewBatch(obj: BatchModel): Observable<IAPIResponse>{
-    debugger;
     return this.http.post<IAPIResponse>(environment.apiUrl + ApiMethodsConstant.BATCH, obj)
   }
 
@@ -23,7 +22,6 @@ export class BatchServiceService {
   }
 
   updateBatch(batchId: number, obj: BatchModel): Observable<IAPIResponse> {
-  debugger;
   return this.http.put<IAPIResponse>(
     `${environment.apiUrl}${ApiMethodsConstant.BATCH}/${batchId}`,
     obj

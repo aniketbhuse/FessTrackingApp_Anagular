@@ -10,19 +10,12 @@
     <!-- Buttons -->
     <div class="flex flex-wrap gap-2 items-center">
       <!-- Search -->
-      <button class="flex items-center gap-2 px-6 py-2 bg-white text-gray-800 rounded-lg shadow
-         hover:bg-blue-50 hover:text-blue-600 transition-all duration-300
-         focus:outline-none focus:ring-2 focus:ring-blue-400 min-w-[180px]">
+      <div style="max-width: 400px; margin: 20px auto;">
 
-        <!-- Modern Search Icon -->
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 transition-transform duration-300 group-hover:scale-110"
-          fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-4.35-4.35m1.85-5.15
-         a7 7 0 11-14 0 7 7 0 0114 0z" />
-        </svg>
-        <span class="font-medium">Search</span>
-      </button>
+        <input type="text" placeholder="Search student..." [(ngModel)]="searchText" (input)="onSearch()"
+          style="width: 100%; padding: 8px; margin-bottom: 1px; " />
 
+      </div>
       <!-- View Toggle -->
       <div class="flex border rounded overflow-hidden">
         <button class="flex items-center justify-center p-2 rounded-lg transition-colors duration-200
@@ -87,7 +80,7 @@
           </thead>
 
           <tbody class="divide-y divide-gray-100">
-            <tr *ngFor="let student of studentsList | slice:(page-1)*pageSize:page*pageSize" class="group transition-all duration-300
+            <tr *ngFor="let student of filteredStudentsList | slice:(page-1)*pageSize:page*pageSize" class="group transition-all duration-300
               hover:bg-blue-50 hover:shadow-md hover:-translate-y-0.5">
 
               <td class="px-6 py-4 font-medium text-gray-700">
@@ -154,7 +147,7 @@
       <div *ngIf="viewMode === 'card'" class="mt-6">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
 
-          <div *ngFor="let student of studentsList"
+          <div *ngFor="let student of filteredStudentsList"
             class="batch-card relative bg-white rounded-2xl border border-blue-300 shadow-sm p-6 transition-all">
 
             <div class="flex justify-between items-start">
@@ -183,7 +176,7 @@
               <div class="flex gap-3">
                 <button class="icon-btn bg-blue-100 text-blue-600">👁</button>
                 <button class="icon-btn bg-yellow-100 text-yellow-600">✏</button>
-                <button (click)="delete(student.candidateId )"class="icon-btn bg-red-100 text-red-600">🗑</button>
+                <button (click)="delete(student.candidateId )" class="icon-btn bg-red-100 text-red-600">🗑</button>
               </div>
             </div>
 
@@ -222,7 +215,7 @@
   class="fixed inset-0 z-50 flex items-center justify-center bg-black/60 px-3 sm:px-0 transition-opacity duration-500">
 
   <div
-    class="bg-white w-full mt-10 sm:max-w-lg rounded-2xl shadow-2xl max-h-[90vh] overflow-y-auto transform transition-transform duration-300 hover:scale-105">
+    class="bg-white w-full mt-6 sm:max-w-lg rounded-2xl shadow-2xl max-h-[90vh] overflow-y-auto transform transition-transform duration-300 hover:scale-105">
 
     <!-- Header -->
     <div
@@ -260,12 +253,11 @@
         animation: fade-slide 3s ease-in-out infinite;
       }
     </style>
-    
+
     <!-- Body to create a New Student -->
     <!-- Body -->
     <div class="px-4 py-5 sm:px-6 sm:py-6 space-y-4">
       <form>
-
         <!-- Full Name -->
         <div class="mb-4 hover:shadow-lg hover:bg-gray-50 transition p-2 rounded-lg">
           <label class="block text-sm font-medium text-gray-700 mb-1">Full Name</label>

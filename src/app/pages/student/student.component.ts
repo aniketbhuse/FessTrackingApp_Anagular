@@ -21,56 +21,21 @@ export class StudentComponent {
     this.showPassword = !this.showPassword;
   }
 
-
-  newStudentObj: StudentModel = new StudentModel()
+  newStudentObj: StudentModel = new StudentModel();
 
   studentsrv = inject(StudentServiceService);
 
-  studentsList: StudentModel[] = [];
+  studentsList: StudentModel[] = [];            // Original API data
+  filteredStudentsList: StudentModel[] = [];   // Filtered data (used in UI)
+
+  searchText: string = '';                      // 🔍 Search input
+
   viewMode: 'card' | 'table' = 'card';
+
   page: number = 1;
   pageSize: number = 10;
+
   studentForm: FormGroup;
-
-  ngOnInit(): void {
-    this.loadStudents();
-  }
-
-  loadStudents() {
-    debugger;
-    this.studentsrv.getAllStudent().subscribe({
-      next: (result: IAPIResponse) => {
-        this.studentsList = result.data
-      }
-
-    })
-  }
-
-  submitStudent() {
-    this.studentsrv.createNewStudent(this.newStudentObj).subscribe({
-      next: (result: IAPIResponse) => {
-        
-        if (result.result) {
-          alert("Batch Created Sucessfully..!");
-          this.closeModal();
-        }
-      },
-      error: (error) => {
-        alert("Api Error " + error.error.message)
-      }
-
-    })
-  }
-
-  delete(batchId: number) {
-    if (confirm('Are you sure you want to delete this batch?')) {
-      this.studentsrv.deleteStudent(batchId).subscribe(res => {
-        if (res.result) {
-          this.loadStudents();
-        }
-      });
-    }
-  }
 
   constructor(private http: HttpClient, private fb: FormBuilder) {
     this.studentForm = this.fb.group({
@@ -83,24 +48,94 @@ export class StudentComponent {
     });
   }
 
+  ngOnInit(): void {
+    this.loadStudents();
+  }
 
-  
+  // ============================
+  // LOAD STUDENTS FROM API
+  // ============================
+  loadStudents() {
+    this.studentsrv.getAllStudent().subscribe({
+      next: (result: IAPIResponse) => {
+        this.studentsList = result.data;
+        this.filteredStudentsList = result.data; // 🔑 Important
+      }
+    });
+  }
 
+  // ============================
+  // SEARCH FUNCTIONALITY
+  // ============================
+  onSearch(): void {
+    const value = this.searchText.toLowerCase().trim();
 
+    if (!value) {
+      this.filteredStudentsList = this.studentsList;
+      return;
+    }
+
+    this.filteredStudentsList = this.studentsList.filter(student =>
+      student.fullName?.toLowerCase().includes(value) ||
+      student.email?.toLowerCase().includes(value) ||
+      student.mobileNumber?.toString().includes(value) 
+    );
+  }
+
+  // ============================
+  // CREATE STUDENT
+  // ============================
+  submitStudent() {
+    this.studentsrv.createNewStudent(this.newStudentObj).subscribe({
+      next: (result: IAPIResponse) => {
+        if (result.result) {
+          alert("Student Created Successfully!");
+          this.closeModal();
+          this.loadStudents(); // refresh list
+        }
+      },
+      error: (error) => {
+        alert("Api Error " + error.error.message);
+      }
+    });
+  }
+
+  // ============================
+  // DELETE STUDENT
+  // ============================
+  delete(batchId: number) {
+    if (confirm('Are you sure you want to delete this student?')) {
+      this.studentsrv.deleteStudent(batchId).subscribe(res => {
+        if (res.result) {
+          this.loadStudents();
+        }
+      });
+    }
+  }
+
+  // ============================
+  // VIEW TOGGLE
+  // ============================
   toggleView(mode: 'table' | 'card') {
     this.viewMode = mode;
   }
 
-
+  // ============================
+  // MODAL HANDLING
+  // ============================
   isModalOpen = false;
+
   openModal() {
     this.isModalOpen = true;
   }
+
   closeModal() {
     this.isModalOpen = false;
   }
 
-
+  // ============================
+  // UTILS
+  // ============================
   formatDate(date: string | Date): string {
     return new Date(date).toLocaleDateString();
   }
@@ -117,3 +152,4 @@ export class StudentComponent {
     console.log('Delete', batchId);
   }
 }
+
