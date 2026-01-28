@@ -74,7 +74,6 @@ export class StudentComponent {
       this.filteredStudentsList = this.studentsList;
       return;
     }
-
     this.filteredStudentsList = this.studentsList.filter(student =>
       student.fullName?.toLowerCase().includes(value) ||
       student.email?.toLowerCase().includes(value) ||

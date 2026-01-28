@@ -54,6 +54,7 @@ export class BatchMasterComponent {
   // LOAD BATCHES
   // ============================
   loadBatches() {
+    debugger;
     this.batchsrv.getAllBatch().subscribe({
       next: (result: IAPIResponse) => {
         this.batchesList = result.data;

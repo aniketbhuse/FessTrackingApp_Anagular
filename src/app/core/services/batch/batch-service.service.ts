@@ -18,6 +18,7 @@ export class BatchServiceService {
   }
 
   getAllBatch(): Observable<IAPIResponse>{
+    debugger;
     return this.http.get<IAPIResponse>(environment.apiUrl + ApiMethodsConstant.BATCH);
   }
 

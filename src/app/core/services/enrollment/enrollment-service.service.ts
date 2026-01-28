@@ -21,6 +21,7 @@ export class EnrollmentServiceService {
   }
 
   getAllEnrollments(): Observable<IAPIResponse> {
+    debugger;
     return this.http.get<IAPIResponse>(
       environment.apiUrl + ApiMethodsConstant.ENROLLMENTS
     );

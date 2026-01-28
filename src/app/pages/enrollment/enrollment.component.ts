@@ -18,8 +18,8 @@ import { StudentServiceService } from '../../core/services/student/student-servi
 })
 export class EnrollmentComponent {
 
-  enrollmentsrv = inject(EnrollmentServiceService);
-  batchService = inject(BatchServiceService);
+   enrollmentsrv = inject(EnrollmentServiceService);
+   batchService = inject(BatchServiceService);
    studentservice = inject(StudentServiceService);
 
 
@@ -48,7 +48,7 @@ export class EnrollmentComponent {
 
   ngOnInit(): void {
     this.loadEnrollments();
-    this.getAllBatches();
+    //this.getAllBatches();
   }
 
   // Get All Batches for dropdown
