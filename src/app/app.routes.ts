@@ -33,23 +33,19 @@ export const routes: Routes = [
         children: [
             {
                 path: 'dashboard',
-                component: DashboardComponent,
-                canActivate: [authGuard]
+                component: DashboardComponent
             },
             {
                 path: 'batch',
-                component: BatchMasterComponent,
-                canActivate: [authGuard]
+                component: BatchMasterComponent
             },
             {
                 path: 'student',
-                component: StudentComponent,
-                canActivate: [authGuard]
+                component: StudentComponent
             },
             {
                 path: 'enrollment',
-                component: EnrollmentComponent,
-                canActivate: [authGuard]
+                component: EnrollmentComponent
             }
         ]
     }

@@ -24,10 +24,6 @@ export class SessionRecordingsComponent {
     youtubeVideoId: ''
   })
 
-sessionForm = form(this.newSession, (schema) => {
-  required(schema.topicName, { message: 'Topic name is required' });
-  required(schema.topicDescription);
-  minLength(schema.topicName, { minLength: 4 });
-});
+
  
 }

@@ -53,7 +53,7 @@
        <button class="logout-btn-outline" (click)="logout()">
   <span class="logout-text">LOG OUT</span>
   <span class="logout-icon">⎋</span>
-</button>
+    </button>
       </div>
 
     </header>
@@ -66,3 +66,4309 @@
   </main>
 
 </div>
+
+
+// Demo code
+
+
+
+<div class="app-container">
+
+  <!-- Sidebar -->
+  <aside class="sidebar" [class.collapsed]="!isOpen">
+    <nav class="menu">
+
+      <a routerLink="/dashboard" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📊</span>
+        <span class="label" *ngIf="isOpen">Dashboard</span>
+      </a>
+
+      <a routerLink="/student" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">👨‍🎓</span>
+        <span class="label" *ngIf="isOpen">Students</span>
+      </a>
+
+      <a routerLink="/batch" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">💳</span>
+        <span class="label" *ngIf="isOpen">Batch</span>
+      </a>
+
+      <a routerLink="/enrollment" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📝</span>
+        <span class="label" *ngIf="isOpen">Enrollment</span>
+      </a>
+
+      <a routerLink="/reports" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📑</span>
+        <span class="label" *ngIf="isOpen">Fees</span>
+      </a>
+
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="content">
+
+    <!-- TOP HEADER -->
+    <header class="top-header">
+
+      <button class="toggle-btn" (click)="toggleSidebar()">☰</button>
+
+      <div class="user-info">
+        <span class="user-name animated-title">
+          👤 {{ loggedUserData.fullName }}
+        </span>
+
+       <button class="logout-btn-outline" (click)="logout()">
+  <span class="logout-text">LOG OUT</span>
+  <span class="logout-icon">⎋</span>
+    </button>
+      </div>
+
+    </header>
+
+    <!-- PAGE CONTENT -->
+    <div class="page-body">
+      <router-outlet></router-outlet>
+    </div>
+
+  </main>
+
+</div>
+
+<div class="app-container">
+
+  <!-- Sidebar -->
+  <aside class="sidebar" [class.collapsed]="!isOpen">
+    <nav class="menu">
+
+      <a routerLink="/dashboard" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📊</span>
+        <span class="label" *ngIf="isOpen">Dashboard</span>
+      </a>
+
+      <a routerLink="/student" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">👨‍🎓</span>
+        <span class="label" *ngIf="isOpen">Students</span>
+      </a>
+
+      <a routerLink="/batch" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">💳</span>
+        <span class="label" *ngIf="isOpen">Batch</span>
+      </a>
+
+      <a routerLink="/enrollment" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📝</span>
+        <span class="label" *ngIf="isOpen">Enrollment</span>
+      </a>
+
+      <a routerLink="/reports" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📑</span>
+        <span class="label" *ngIf="isOpen">Fees</span>
+      </a>
+
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="content">
+
+    <!-- TOP HEADER -->
+    <header class="top-header">
+
+      <button class="toggle-btn" (click)="toggleSidebar()">☰</button>
+
+      <div class="user-info">
+        <span class="user-name animated-title">
+          👤 {{ loggedUserData.fullName }}
+        </span>
+
+       <button class="logout-btn-outline" (click)="logout()">
+  <span class="logout-text">LOG OUT</span>
+  <span class="logout-icon">⎋</span>
+    </button>
+      </div>
+
+    </header>
+
+    <!-- PAGE CONTENT -->
+    <div class="page-body">
+      <router-outlet></router-outlet>
+    </div>
+
+  </main>
+
+</div>
+
+<div class="app-container">
+
+  <!-- Sidebar -->
+  <aside class="sidebar" [class.collapsed]="!isOpen">
+    <nav class="menu">
+
+      <a routerLink="/dashboard" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📊</span>
+        <span class="label" *ngIf="isOpen">Dashboard</span>
+      </a>
+
+      <a routerLink="/student" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">👨‍🎓</span>
+        <span class="label" *ngIf="isOpen">Students</span>
+      </a>
+
+      <a routerLink="/batch" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">💳</span>
+        <span class="label" *ngIf="isOpen">Batch</span>
+      </a>
+
+      <a routerLink="/enrollment" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📝</span>
+        <span class="label" *ngIf="isOpen">Enrollment</span>
+      </a>
+
+      <a routerLink="/reports" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📑</span>
+        <span class="label" *ngIf="isOpen">Fees</span>
+      </a>
+
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="content">
+
+    <!-- TOP HEADER -->
+    <header class="top-header">
+
+      <button class="toggle-btn" (click)="toggleSidebar()">☰</button>
+
+      <div class="user-info">
+        <span class="user-name animated-title">
+          👤 {{ loggedUserData.fullName }}
+        </span>
+
+       <button class="logout-btn-outline" (click)="logout()">
+  <span class="logout-text">LOG OUT</span>
+  <span class="logout-icon">⎋</span>
+    </button>
+      </div>
+
+    </header>
+
+    <!-- PAGE CONTENT -->
+    <div class="page-body">
+      <router-outlet></router-outlet>
+    </div>
+
+  </main>
+
+</div>
+
+
+<div class="app-container">
+
+  <!-- Sidebar -->
+  <aside class="sidebar" [class.collapsed]="!isOpen">
+    <nav class="menu">
+
+      <a routerLink="/dashboard" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📊</span>
+        <span class="label" *ngIf="isOpen">Dashboard</span>
+      </a>
+
+      <a routerLink="/student" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">👨‍🎓</span>
+        <span class="label" *ngIf="isOpen">Students</span>
+      </a>
+
+      <a routerLink="/batch" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">💳</span>
+        <span class="label" *ngIf="isOpen">Batch</span>
+      </a>
+
+      <a routerLink="/enrollment" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📝</span>
+        <span class="label" *ngIf="isOpen">Enrollment</span>
+      </a>
+
+      <a routerLink="/reports" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📑</span>
+        <span class="label" *ngIf="isOpen">Fees</span>
+      </a>
+
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="content">
+
+    <!-- TOP HEADER -->
+    <header class="top-header">
+
+      <button class="toggle-btn" (click)="toggleSidebar()">☰</button>
+
+      <div class="user-info">
+        <span class="user-name animated-title">
+          👤 {{ loggedUserData.fullName }}
+        </span>
+
+       <button class="logout-btn-outline" (click)="logout()">
+  <span class="logout-text">LOG OUT</span>
+  <span class="logout-icon">⎋</span>
+    </button>
+      </div>
+
+    </header>
+
+    <!-- PAGE CONTENT -->
+    <div class="page-body">
+      <router-outlet></router-outlet>
+    </div>
+
+  </main>
+
+</div>
+<div class="app-container">
+
+  <!-- Sidebar -->
+  <aside class="sidebar" [class.collapsed]="!isOpen">
+    <nav class="menu">
+
+      <a routerLink="/dashboard" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📊</span>
+        <span class="label" *ngIf="isOpen">Dashboard</span>
+      </a>
+
+      <a routerLink="/student" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">👨‍🎓</span>
+        <span class="label" *ngIf="isOpen">Students</span>
+      </a>
+
+      <a routerLink="/batch" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">💳</span>
+        <span class="label" *ngIf="isOpen">Batch</span>
+      </a>
+
+      <a routerLink="/enrollment" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📝</span>
+        <span class="label" *ngIf="isOpen">Enrollment</span>
+      </a>
+
+      <a routerLink="/reports" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📑</span>
+        <span class="label" *ngIf="isOpen">Fees</span>
+      </a>
+
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="content">
+
+    <!-- TOP HEADER -->
+    <header class="top-header">
+
+      <button class="toggle-btn" (click)="toggleSidebar()">☰</button>
+
+      <div class="user-info">
+        <span class="user-name animated-title">
+          👤 {{ loggedUserData.fullName }}
+        </span>
+
+       <button class="logout-btn-outline" (click)="logout()">
+  <span class="logout-text">LOG OUT</span>
+  <span class="logout-icon">⎋</span>
+    </button>
+      </div>
+
+    </header>
+
+    <!-- PAGE CONTENT -->
+    <div class="page-body">
+      <router-outlet></router-outlet>
+    </div>
+
+  </main>
+
+</div>
+
+<div class="app-container">
+
+  <!-- Sidebar -->
+  <aside class="sidebar" [class.collapsed]="!isOpen">
+    <nav class="menu">
+
+      <a routerLink="/dashboard" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📊</span>
+        <span class="label" *ngIf="isOpen">Dashboard</span>
+      </a>
+
+      <a routerLink="/student" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">👨‍🎓</span>
+        <span class="label" *ngIf="isOpen">Students</span>
+      </a>
+
+      <a routerLink="/batch" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">💳</span>
+        <span class="label" *ngIf="isOpen">Batch</span>
+      </a>
+
+      <a routerLink="/enrollment" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📝</span>
+        <span class="label" *ngIf="isOpen">Enrollment</span>
+      </a>
+
+      <a routerLink="/reports" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📑</span>
+        <span class="label" *ngIf="isOpen">Fees</span>
+      </a>
+
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="content">
+
+    <!-- TOP HEADER -->
+    <header class="top-header">
+
+      <button class="toggle-btn" (click)="toggleSidebar()">☰</button>
+
+      <div class="user-info">
+        <span class="user-name animated-title">
+          👤 {{ loggedUserData.fullName }}
+        </span>
+
+       <button class="logout-btn-outline" (click)="logout()">
+  <span class="logout-text">LOG OUT</span>
+  <span class="logout-icon">⎋</span>
+    </button>
+      </div>
+
+    </header>
+
+    <!-- PAGE CONTENT -->
+    <div class="page-body">
+      <router-outlet></router-outlet>
+    </div>
+
+  </main>
+
+</div>
+
+<div class="app-container">
+
+  <!-- Sidebar -->
+  <aside class="sidebar" [class.collapsed]="!isOpen">
+    <nav class="menu">
+
+      <a routerLink="/dashboard" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📊</span>
+        <span class="label" *ngIf="isOpen">Dashboard</span>
+      </a>
+
+      <a routerLink="/student" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">👨‍🎓</span>
+        <span class="label" *ngIf="isOpen">Students</span>
+      </a>
+
+      <a routerLink="/batch" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">💳</span>
+        <span class="label" *ngIf="isOpen">Batch</span>
+      </a>
+
+      <a routerLink="/enrollment" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📝</span>
+        <span class="label" *ngIf="isOpen">Enrollment</span>
+      </a>
+
+      <a routerLink="/reports" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📑</span>
+        <span class="label" *ngIf="isOpen">Fees</span>
+      </a>
+
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="content">
+
+    <!-- TOP HEADER -->
+    <header class="top-header">
+
+      <button class="toggle-btn" (click)="toggleSidebar()">☰</button>
+
+      <div class="user-info">
+        <span class="user-name animated-title">
+          👤 {{ loggedUserData.fullName }}
+        </span>
+
+       <button class="logout-btn-outline" (click)="logout()">
+  <span class="logout-text">LOG OUT</span>
+  <span class="logout-icon">⎋</span>
+    </button>
+      </div>
+
+    </header>
+
+    <!-- PAGE CONTENT -->
+    <div class="page-body">
+      <router-outlet></router-outlet>
+    </div>
+
+  </main>
+
+</div>
+
+<div class="app-container">
+
+  <!-- Sidebar -->
+  <aside class="sidebar" [class.collapsed]="!isOpen">
+    <nav class="menu">
+
+      <a routerLink="/dashboard" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📊</span>
+        <span class="label" *ngIf="isOpen">Dashboard</span>
+      </a>
+
+      <a routerLink="/student" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">👨‍🎓</span>
+        <span class="label" *ngIf="isOpen">Students</span>
+      </a>
+
+      <a routerLink="/batch" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">💳</span>
+        <span class="label" *ngIf="isOpen">Batch</span>
+      </a>
+
+      <a routerLink="/enrollment" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📝</span>
+        <span class="label" *ngIf="isOpen">Enrollment</span>
+      </a>
+
+      <a routerLink="/reports" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📑</span>
+        <span class="label" *ngIf="isOpen">Fees</span>
+      </a>
+
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="content">
+
+    <!-- TOP HEADER -->
+    <header class="top-header">
+
+      <button class="toggle-btn" (click)="toggleSidebar()">☰</button>
+
+      <div class="user-info">
+        <span class="user-name animated-title">
+          👤 {{ loggedUserData.fullName }}
+        </span>
+
+       <button class="logout-btn-outline" (click)="logout()">
+  <span class="logout-text">LOG OUT</span>
+  <span class="logout-icon">⎋</span>
+    </button>
+      </div>
+
+    </header>
+
+    <!-- PAGE CONTENT -->
+    <div class="page-body">
+      <router-outlet></router-outlet>
+    </div>
+
+  </main>
+
+</div>
+
+<div class="app-container">
+
+  <!-- Sidebar -->
+  <aside class="sidebar" [class.collapsed]="!isOpen">
+    <nav class="menu">
+
+      <a routerLink="/dashboard" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📊</span>
+        <span class="label" *ngIf="isOpen">Dashboard</span>
+      </a>
+
+      <a routerLink="/student" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">👨‍🎓</span>
+        <span class="label" *ngIf="isOpen">Students</span>
+      </a>
+
+      <a routerLink="/batch" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">💳</span>
+        <span class="label" *ngIf="isOpen">Batch</span>
+      </a>
+
+      <a routerLink="/enrollment" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📝</span>
+        <span class="label" *ngIf="isOpen">Enrollment</span>
+      </a>
+
+      <a routerLink="/reports" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📑</span>
+        <span class="label" *ngIf="isOpen">Fees</span>
+      </a>
+
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="content">
+
+    <!-- TOP HEADER -->
+    <header class="top-header">
+
+      <button class="toggle-btn" (click)="toggleSidebar()">☰</button>
+
+      <div class="user-info">
+        <span class="user-name animated-title">
+          👤 {{ loggedUserData.fullName }}
+        </span>
+
+       <button class="logout-btn-outline" (click)="logout()">
+  <span class="logout-text">LOG OUT</span>
+  <span class="logout-icon">⎋</span>
+    </button>
+      </div>
+
+    </header>
+
+    <!-- PAGE CONTENT -->
+    <div class="page-body">
+      <router-outlet></router-outlet>
+    </div>
+
+  </main>
+
+</div>
+
+<div class="app-container">
+
+  <!-- Sidebar -->
+  <aside class="sidebar" [class.collapsed]="!isOpen">
+    <nav class="menu">
+
+      <a routerLink="/dashboard" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📊</span>
+        <span class="label" *ngIf="isOpen">Dashboard</span>
+      </a>
+
+      <a routerLink="/student" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">👨‍🎓</span>
+        <span class="label" *ngIf="isOpen">Students</span>
+      </a>
+
+      <a routerLink="/batch" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">💳</span>
+        <span class="label" *ngIf="isOpen">Batch</span>
+      </a>
+
+      <a routerLink="/enrollment" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📝</span>
+        <span class="label" *ngIf="isOpen">Enrollment</span>
+      </a>
+
+      <a routerLink="/reports" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📑</span>
+        <span class="label" *ngIf="isOpen">Fees</span>
+      </a>
+
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="content">
+
+    <!-- TOP HEADER -->
+    <header class="top-header">
+
+      <button class="toggle-btn" (click)="toggleSidebar()">☰</button>
+
+      <div class="user-info">
+        <span class="user-name animated-title">
+          👤 {{ loggedUserData.fullName }}
+        </span>
+
+       <button class="logout-btn-outline" (click)="logout()">
+  <span class="logout-text">LOG OUT</span>
+  <span class="logout-icon">⎋</span>
+    </button>
+      </div>
+
+    </header>
+
+    <!-- PAGE CONTENT -->
+    <div class="page-body">
+      <router-outlet></router-outlet>
+    </div>
+
+  </main>
+
+</div>
+
+
+<div class="app-container">
+
+  <!-- Sidebar -->
+  <aside class="sidebar" [class.collapsed]="!isOpen">
+    <nav class="menu">
+
+      <a routerLink="/dashboard" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📊</span>
+        <span class="label" *ngIf="isOpen">Dashboard</span>
+      </a>
+
+      <a routerLink="/student" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">👨‍🎓</span>
+        <span class="label" *ngIf="isOpen">Students</span>
+      </a>
+
+      <a routerLink="/batch" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">💳</span>
+        <span class="label" *ngIf="isOpen">Batch</span>
+      </a>
+
+      <a routerLink="/enrollment" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📝</span>
+        <span class="label" *ngIf="isOpen">Enrollment</span>
+      </a>
+
+      <a routerLink="/reports" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📑</span>
+        <span class="label" *ngIf="isOpen">Fees</span>
+      </a>
+
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="content">
+
+    <!-- TOP HEADER -->
+    <header class="top-header">
+
+      <button class="toggle-btn" (click)="toggleSidebar()">☰</button>
+
+      <div class="user-info">
+        <span class="user-name animated-title">
+          👤 {{ loggedUserData.fullName }}
+        </span>
+
+       <button class="logout-btn-outline" (click)="logout()">
+  <span class="logout-text">LOG OUT</span>
+  <span class="logout-icon">⎋</span>
+    </button>
+      </div>
+
+    </header>
+
+    <!-- PAGE CONTENT -->
+    <div class="page-body">
+      <router-outlet></router-outlet>
+    </div>
+
+  </main>
+
+</div>
+
+
+<div class="app-container">
+
+  <!-- Sidebar -->
+  <aside class="sidebar" [class.collapsed]="!isOpen">
+    <nav class="menu">
+
+      <a routerLink="/dashboard" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📊</span>
+        <span class="label" *ngIf="isOpen">Dashboard</span>
+      </a>
+
+      <a routerLink="/student" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">👨‍🎓</span>
+        <span class="label" *ngIf="isOpen">Students</span>
+      </a>
+
+      <a routerLink="/batch" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">💳</span>
+        <span class="label" *ngIf="isOpen">Batch</span>
+      </a>
+
+      <a routerLink="/enrollment" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📝</span>
+        <span class="label" *ngIf="isOpen">Enrollment</span>
+      </a>
+
+      <a routerLink="/reports" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📑</span>
+        <span class="label" *ngIf="isOpen">Fees</span>
+      </a>
+
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="content">
+
+    <!-- TOP HEADER -->
+    <header class="top-header">
+
+      <button class="toggle-btn" (click)="toggleSidebar()">☰</button>
+
+      <div class="user-info">
+        <span class="user-name animated-title">
+          👤 {{ loggedUserData.fullName }}
+        </span>
+
+       <button class="logout-btn-outline" (click)="logout()">
+  <span class="logout-text">LOG OUT</span>
+  <span class="logout-icon">⎋</span>
+    </button>
+      </div>
+
+    </header>
+
+    <!-- PAGE CONTENT -->
+    <div class="page-body">
+      <router-outlet></router-outlet>
+    </div>
+
+  </main>
+
+</div>
+
+<div class="app-container">
+
+  <!-- Sidebar -->
+  <aside class="sidebar" [class.collapsed]="!isOpen">
+    <nav class="menu">
+
+      <a routerLink="/dashboard" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📊</span>
+        <span class="label" *ngIf="isOpen">Dashboard</span>
+      </a>
+
+      <a routerLink="/student" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">👨‍🎓</span>
+        <span class="label" *ngIf="isOpen">Students</span>
+      </a>
+
+      <a routerLink="/batch" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">💳</span>
+        <span class="label" *ngIf="isOpen">Batch</span>
+      </a>
+
+      <a routerLink="/enrollment" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📝</span>
+        <span class="label" *ngIf="isOpen">Enrollment</span>
+      </a>
+
+      <a routerLink="/reports" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📑</span>
+        <span class="label" *ngIf="isOpen">Fees</span>
+      </a>
+
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="content">
+
+    <!-- TOP HEADER -->
+    <header class="top-header">
+
+      <button class="toggle-btn" (click)="toggleSidebar()">☰</button>
+
+      <div class="user-info">
+        <span class="user-name animated-title">
+          👤 {{ loggedUserData.fullName }}
+        </span>
+
+       <button class="logout-btn-outline" (click)="logout()">
+  <span class="logout-text">LOG OUT</span>
+  <span class="logout-icon">⎋</span>
+    </button>
+      </div>
+
+    </header>
+
+    <!-- PAGE CONTENT -->
+    <div class="page-body">
+      <router-outlet></router-outlet>
+    </div>
+
+  </main>
+
+</div>
+
+<div class="app-container">
+
+  <!-- Sidebar -->
+  <aside class="sidebar" [class.collapsed]="!isOpen">
+    <nav class="menu">
+
+      <a routerLink="/dashboard" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📊</span>
+        <span class="label" *ngIf="isOpen">Dashboard</span>
+      </a>
+
+      <a routerLink="/student" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">👨‍🎓</span>
+        <span class="label" *ngIf="isOpen">Students</span>
+      </a>
+
+      <a routerLink="/batch" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">💳</span>
+        <span class="label" *ngIf="isOpen">Batch</span>
+      </a>
+
+      <a routerLink="/enrollment" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📝</span>
+        <span class="label" *ngIf="isOpen">Enrollment</span>
+      </a>
+
+      <a routerLink="/reports" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📑</span>
+        <span class="label" *ngIf="isOpen">Fees</span>
+      </a>
+
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="content">
+
+    <!-- TOP HEADER -->
+    <header class="top-header">
+
+      <button class="toggle-btn" (click)="toggleSidebar()">☰</button>
+
+      <div class="user-info">
+        <span class="user-name animated-title">
+          👤 {{ loggedUserData.fullName }}
+        </span>
+
+       <button class="logout-btn-outline" (click)="logout()">
+  <span class="logout-text">LOG OUT</span>
+  <span class="logout-icon">⎋</span>
+    </button>
+      </div>
+
+    </header>
+
+    <!-- PAGE CONTENT -->
+    <div class="page-body">
+      <router-outlet></router-outlet>
+    </div>
+
+  </main>
+
+</div>
+
+<div class="app-container">
+
+  <!-- Sidebar -->
+  <aside class="sidebar" [class.collapsed]="!isOpen">
+    <nav class="menu">
+
+      <a routerLink="/dashboard" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📊</span>
+        <span class="label" *ngIf="isOpen">Dashboard</span>
+      </a>
+
+      <a routerLink="/student" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">👨‍🎓</span>
+        <span class="label" *ngIf="isOpen">Students</span>
+      </a>
+
+      <a routerLink="/batch" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">💳</span>
+        <span class="label" *ngIf="isOpen">Batch</span>
+      </a>
+
+      <a routerLink="/enrollment" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📝</span>
+        <span class="label" *ngIf="isOpen">Enrollment</span>
+      </a>
+
+      <a routerLink="/reports" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📑</span>
+        <span class="label" *ngIf="isOpen">Fees</span>
+      </a>
+
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="content">
+
+    <!-- TOP HEADER -->
+    <header class="top-header">
+
+      <button class="toggle-btn" (click)="toggleSidebar()">☰</button>
+
+      <div class="user-info">
+        <span class="user-name animated-title">
+          👤 {{ loggedUserData.fullName }}
+        </span>
+
+       <button class="logout-btn-outline" (click)="logout()">
+  <span class="logout-text">LOG OUT</span>
+  <span class="logout-icon">⎋</span>
+    </button>
+      </div>
+
+    </header>
+
+    <!-- PAGE CONTENT -->
+    <div class="page-body">
+      <router-outlet></router-outlet>
+    </div>
+
+  </main>
+
+</div>
+
+<div class="app-container">
+
+  <!-- Sidebar -->
+  <aside class="sidebar" [class.collapsed]="!isOpen">
+    <nav class="menu">
+
+      <a routerLink="/dashboard" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📊</span>
+        <span class="label" *ngIf="isOpen">Dashboard</span>
+      </a>
+
+      <a routerLink="/student" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">👨‍🎓</span>
+        <span class="label" *ngIf="isOpen">Students</span>
+      </a>
+
+      <a routerLink="/batch" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">💳</span>
+        <span class="label" *ngIf="isOpen">Batch</span>
+      </a>
+
+      <a routerLink="/enrollment" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📝</span>
+        <span class="label" *ngIf="isOpen">Enrollment</span>
+      </a>
+
+      <a routerLink="/reports" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📑</span>
+        <span class="label" *ngIf="isOpen">Fees</span>
+      </a>
+
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="content">
+
+    <!-- TOP HEADER -->
+    <header class="top-header">
+
+      <button class="toggle-btn" (click)="toggleSidebar()">☰</button>
+
+      <div class="user-info">
+        <span class="user-name animated-title">
+          👤 {{ loggedUserData.fullName }}
+        </span>
+
+       <button class="logout-btn-outline" (click)="logout()">
+  <span class="logout-text">LOG OUT</span>
+  <span class="logout-icon">⎋</span>
+    </button>
+      </div>
+
+    </header>
+
+    <!-- PAGE CONTENT -->
+    <div class="page-body">
+      <router-outlet></router-outlet>
+    </div>
+
+  </main>
+
+</div>
+
+<div class="app-container">
+
+  <!-- Sidebar -->
+  <aside class="sidebar" [class.collapsed]="!isOpen">
+    <nav class="menu">
+
+      <a routerLink="/dashboard" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📊</span>
+        <span class="label" *ngIf="isOpen">Dashboard</span>
+      </a>
+
+      <a routerLink="/student" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">👨‍🎓</span>
+        <span class="label" *ngIf="isOpen">Students</span>
+      </a>
+
+      <a routerLink="/batch" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">💳</span>
+        <span class="label" *ngIf="isOpen">Batch</span>
+      </a>
+
+      <a routerLink="/enrollment" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📝</span>
+        <span class="label" *ngIf="isOpen">Enrollment</span>
+      </a>
+
+      <a routerLink="/reports" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📑</span>
+        <span class="label" *ngIf="isOpen">Fees</span>
+      </a>
+
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="content">
+
+    <!-- TOP HEADER -->
+    <header class="top-header">
+
+      <button class="toggle-btn" (click)="toggleSidebar()">☰</button>
+
+      <div class="user-info">
+        <span class="user-name animated-title">
+          👤 {{ loggedUserData.fullName }}
+        </span>
+
+       <button class="logout-btn-outline" (click)="logout()">
+  <span class="logout-text">LOG OUT</span>
+  <span class="logout-icon">⎋</span>
+    </button>
+      </div>
+
+    </header>
+
+    <!-- PAGE CONTENT -->
+    <div class="page-body">
+      <router-outlet></router-outlet>
+    </div>
+
+  </main>
+
+</div>
+
+<div class="app-container">
+
+  <!-- Sidebar -->
+  <aside class="sidebar" [class.collapsed]="!isOpen">
+    <nav class="menu">
+
+      <a routerLink="/dashboard" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📊</span>
+        <span class="label" *ngIf="isOpen">Dashboard</span>
+      </a>
+
+      <a routerLink="/student" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">👨‍🎓</span>
+        <span class="label" *ngIf="isOpen">Students</span>
+      </a>
+
+      <a routerLink="/batch" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">💳</span>
+        <span class="label" *ngIf="isOpen">Batch</span>
+      </a>
+
+      <a routerLink="/enrollment" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📝</span>
+        <span class="label" *ngIf="isOpen">Enrollment</span>
+      </a>
+
+      <a routerLink="/reports" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📑</span>
+        <span class="label" *ngIf="isOpen">Fees</span>
+      </a>
+
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="content">
+
+    <!-- TOP HEADER -->
+    <header class="top-header">
+
+      <button class="toggle-btn" (click)="toggleSidebar()">☰</button>
+
+      <div class="user-info">
+        <span class="user-name animated-title">
+          👤 {{ loggedUserData.fullName }}
+        </span>
+
+       <button class="logout-btn-outline" (click)="logout()">
+  <span class="logout-text">LOG OUT</span>
+  <span class="logout-icon">⎋</span>
+    </button>
+      </div>
+
+    </header>
+
+    <!-- PAGE CONTENT -->
+    <div class="page-body">
+      <router-outlet></router-outlet>
+    </div>
+
+  </main>
+
+</div>
+
+<div class="app-container">
+
+  <!-- Sidebar -->
+  <aside class="sidebar" [class.collapsed]="!isOpen">
+    <nav class="menu">
+
+      <a routerLink="/dashboard" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📊</span>
+        <span class="label" *ngIf="isOpen">Dashboard</span>
+      </a>
+
+      <a routerLink="/student" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">👨‍🎓</span>
+        <span class="label" *ngIf="isOpen">Students</span>
+      </a>
+
+      <a routerLink="/batch" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">💳</span>
+        <span class="label" *ngIf="isOpen">Batch</span>
+      </a>
+
+      <a routerLink="/enrollment" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📝</span>
+        <span class="label" *ngIf="isOpen">Enrollment</span>
+      </a>
+
+      <a routerLink="/reports" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📑</span>
+        <span class="label" *ngIf="isOpen">Fees</span>
+      </a>
+
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="content">
+
+    <!-- TOP HEADER -->
+    <header class="top-header">
+
+      <button class="toggle-btn" (click)="toggleSidebar()">☰</button>
+
+      <div class="user-info">
+        <span class="user-name animated-title">
+          👤 {{ loggedUserData.fullName }}
+        </span>
+
+       <button class="logout-btn-outline" (click)="logout()">
+  <span class="logout-text">LOG OUT</span>
+  <span class="logout-icon">⎋</span>
+    </button>
+      </div>
+
+    </header>
+
+    <!-- PAGE CONTENT -->
+    <div class="page-body">
+      <router-outlet></router-outlet>
+    </div>
+
+  </main>
+
+</div>
+
+<div class="app-container">
+
+  <!-- Sidebar -->
+  <aside class="sidebar" [class.collapsed]="!isOpen">
+    <nav class="menu">
+
+      <a routerLink="/dashboard" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📊</span>
+        <span class="label" *ngIf="isOpen">Dashboard</span>
+      </a>
+
+      <a routerLink="/student" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">👨‍🎓</span>
+        <span class="label" *ngIf="isOpen">Students</span>
+      </a>
+
+      <a routerLink="/batch" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">💳</span>
+        <span class="label" *ngIf="isOpen">Batch</span>
+      </a>
+
+      <a routerLink="/enrollment" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📝</span>
+        <span class="label" *ngIf="isOpen">Enrollment</span>
+      </a>
+
+      <a routerLink="/reports" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📑</span>
+        <span class="label" *ngIf="isOpen">Fees</span>
+      </a>
+
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="content">
+
+    <!-- TOP HEADER -->
+    <header class="top-header">
+
+      <button class="toggle-btn" (click)="toggleSidebar()">☰</button>
+
+      <div class="user-info">
+        <span class="user-name animated-title">
+          👤 {{ loggedUserData.fullName }}
+        </span>
+
+       <button class="logout-btn-outline" (click)="logout()">
+  <span class="logout-text">LOG OUT</span>
+  <span class="logout-icon">⎋</span>
+    </button>
+      </div>
+
+    </header>
+
+    <!-- PAGE CONTENT -->
+    <div class="page-body">
+      <router-outlet></router-outlet>
+    </div>
+
+  </main>
+
+</div>
+
+
+
+<div class="app-container">
+
+  <!-- Sidebar -->
+  <aside class="sidebar" [class.collapsed]="!isOpen">
+    <nav class="menu">
+
+      <a routerLink="/dashboard" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📊</span>
+        <span class="label" *ngIf="isOpen">Dashboard</span>
+      </a>
+
+      <a routerLink="/student" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">👨‍🎓</span>
+        <span class="label" *ngIf="isOpen">Students</span>
+      </a>
+
+      <a routerLink="/batch" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">💳</span>
+        <span class="label" *ngIf="isOpen">Batch</span>
+      </a>
+
+      <a routerLink="/enrollment" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📝</span>
+        <span class="label" *ngIf="isOpen">Enrollment</span>
+      </a>
+
+      <a routerLink="/reports" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📑</span>
+        <span class="label" *ngIf="isOpen">Fees</span>
+      </a>
+
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="content">
+
+    <!-- TOP HEADER -->
+    <header class="top-header">
+
+      <button class="toggle-btn" (click)="toggleSidebar()">☰</button>
+
+      <div class="user-info">
+        <span class="user-name animated-title">
+          👤 {{ loggedUserData.fullName }}
+        </span>
+
+       <button class="logout-btn-outline" (click)="logout()">
+  <span class="logout-text">LOG OUT</span>
+  <span class="logout-icon">⎋</span>
+    </button>
+      </div>
+
+    </header>
+
+    <!-- PAGE CONTENT -->
+    <div class="page-body">
+      <router-outlet></router-outlet>
+    </div>
+
+  </main>
+
+</div>
+
+
+// Demo code
+
+
+
+<div class="app-container">
+
+  <!-- Sidebar -->
+  <aside class="sidebar" [class.collapsed]="!isOpen">
+    <nav class="menu">
+
+      <a routerLink="/dashboard" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📊</span>
+        <span class="label" *ngIf="isOpen">Dashboard</span>
+      </a>
+
+      <a routerLink="/student" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">👨‍🎓</span>
+        <span class="label" *ngIf="isOpen">Students</span>
+      </a>
+
+      <a routerLink="/batch" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">💳</span>
+        <span class="label" *ngIf="isOpen">Batch</span>
+      </a>
+
+      <a routerLink="/enrollment" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📝</span>
+        <span class="label" *ngIf="isOpen">Enrollment</span>
+      </a>
+
+      <a routerLink="/reports" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📑</span>
+        <span class="label" *ngIf="isOpen">Fees</span>
+      </a>
+
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="content">
+
+    <!-- TOP HEADER -->
+    <header class="top-header">
+
+      <button class="toggle-btn" (click)="toggleSidebar()">☰</button>
+
+      <div class="user-info">
+        <span class="user-name animated-title">
+          👤 {{ loggedUserData.fullName }}
+        </span>
+
+       <button class="logout-btn-outline" (click)="logout()">
+  <span class="logout-text">LOG OUT</span>
+  <span class="logout-icon">⎋</span>
+    </button>
+      </div>
+
+    </header>
+
+    <!-- PAGE CONTENT -->
+    <div class="page-body">
+      <router-outlet></router-outlet>
+    </div>
+
+  </main>
+
+</div>
+
+<div class="app-container">
+
+  <!-- Sidebar -->
+  <aside class="sidebar" [class.collapsed]="!isOpen">
+    <nav class="menu">
+
+      <a routerLink="/dashboard" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📊</span>
+        <span class="label" *ngIf="isOpen">Dashboard</span>
+      </a>
+
+      <a routerLink="/student" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">👨‍🎓</span>
+        <span class="label" *ngIf="isOpen">Students</span>
+      </a>
+
+      <a routerLink="/batch" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">💳</span>
+        <span class="label" *ngIf="isOpen">Batch</span>
+      </a>
+
+      <a routerLink="/enrollment" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📝</span>
+        <span class="label" *ngIf="isOpen">Enrollment</span>
+      </a>
+
+      <a routerLink="/reports" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📑</span>
+        <span class="label" *ngIf="isOpen">Fees</span>
+      </a>
+
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="content">
+
+    <!-- TOP HEADER -->
+    <header class="top-header">
+
+      <button class="toggle-btn" (click)="toggleSidebar()">☰</button>
+
+      <div class="user-info">
+        <span class="user-name animated-title">
+          👤 {{ loggedUserData.fullName }}
+        </span>
+
+       <button class="logout-btn-outline" (click)="logout()">
+  <span class="logout-text">LOG OUT</span>
+  <span class="logout-icon">⎋</span>
+    </button>
+      </div>
+
+    </header>
+
+    <!-- PAGE CONTENT -->
+    <div class="page-body">
+      <router-outlet></router-outlet>
+    </div>
+
+  </main>
+
+</div>
+
+<div class="app-container">
+
+  <!-- Sidebar -->
+  <aside class="sidebar" [class.collapsed]="!isOpen">
+    <nav class="menu">
+
+      <a routerLink="/dashboard" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📊</span>
+        <span class="label" *ngIf="isOpen">Dashboard</span>
+      </a>
+
+      <a routerLink="/student" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">👨‍🎓</span>
+        <span class="label" *ngIf="isOpen">Students</span>
+      </a>
+
+      <a routerLink="/batch" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">💳</span>
+        <span class="label" *ngIf="isOpen">Batch</span>
+      </a>
+
+      <a routerLink="/enrollment" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📝</span>
+        <span class="label" *ngIf="isOpen">Enrollment</span>
+      </a>
+
+      <a routerLink="/reports" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📑</span>
+        <span class="label" *ngIf="isOpen">Fees</span>
+      </a>
+
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="content">
+
+    <!-- TOP HEADER -->
+    <header class="top-header">
+
+      <button class="toggle-btn" (click)="toggleSidebar()">☰</button>
+
+      <div class="user-info">
+        <span class="user-name animated-title">
+          👤 {{ loggedUserData.fullName }}
+        </span>
+
+       <button class="logout-btn-outline" (click)="logout()">
+  <span class="logout-text">LOG OUT</span>
+  <span class="logout-icon">⎋</span>
+    </button>
+      </div>
+
+    </header>
+
+    <!-- PAGE CONTENT -->
+    <div class="page-body">
+      <router-outlet></router-outlet>
+    </div>
+
+  </main>
+
+</div>
+
+
+<div class="app-container">
+
+  <!-- Sidebar -->
+  <aside class="sidebar" [class.collapsed]="!isOpen">
+    <nav class="menu">
+
+      <a routerLink="/dashboard" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📊</span>
+        <span class="label" *ngIf="isOpen">Dashboard</span>
+      </a>
+
+      <a routerLink="/student" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">👨‍🎓</span>
+        <span class="label" *ngIf="isOpen">Students</span>
+      </a>
+
+      <a routerLink="/batch" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">💳</span>
+        <span class="label" *ngIf="isOpen">Batch</span>
+      </a>
+
+      <a routerLink="/enrollment" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📝</span>
+        <span class="label" *ngIf="isOpen">Enrollment</span>
+      </a>
+
+      <a routerLink="/reports" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📑</span>
+        <span class="label" *ngIf="isOpen">Fees</span>
+      </a>
+
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="content">
+
+    <!-- TOP HEADER -->
+    <header class="top-header">
+
+      <button class="toggle-btn" (click)="toggleSidebar()">☰</button>
+
+      <div class="user-info">
+        <span class="user-name animated-title">
+          👤 {{ loggedUserData.fullName }}
+        </span>
+
+       <button class="logout-btn-outline" (click)="logout()">
+  <span class="logout-text">LOG OUT</span>
+  <span class="logout-icon">⎋</span>
+    </button>
+      </div>
+
+    </header>
+
+    <!-- PAGE CONTENT -->
+    <div class="page-body">
+      <router-outlet></router-outlet>
+    </div>
+
+  </main>
+
+</div>
+<div class="app-container">
+
+  <!-- Sidebar -->
+  <aside class="sidebar" [class.collapsed]="!isOpen">
+    <nav class="menu">
+
+      <a routerLink="/dashboard" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📊</span>
+        <span class="label" *ngIf="isOpen">Dashboard</span>
+      </a>
+
+      <a routerLink="/student" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">👨‍🎓</span>
+        <span class="label" *ngIf="isOpen">Students</span>
+      </a>
+
+      <a routerLink="/batch" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">💳</span>
+        <span class="label" *ngIf="isOpen">Batch</span>
+      </a>
+
+      <a routerLink="/enrollment" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📝</span>
+        <span class="label" *ngIf="isOpen">Enrollment</span>
+      </a>
+
+      <a routerLink="/reports" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📑</span>
+        <span class="label" *ngIf="isOpen">Fees</span>
+      </a>
+
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="content">
+
+    <!-- TOP HEADER -->
+    <header class="top-header">
+
+      <button class="toggle-btn" (click)="toggleSidebar()">☰</button>
+
+      <div class="user-info">
+        <span class="user-name animated-title">
+          👤 {{ loggedUserData.fullName }}
+        </span>
+
+       <button class="logout-btn-outline" (click)="logout()">
+  <span class="logout-text">LOG OUT</span>
+  <span class="logout-icon">⎋</span>
+    </button>
+      </div>
+
+    </header>
+
+    <!-- PAGE CONTENT -->
+    <div class="page-body">
+      <router-outlet></router-outlet>
+    </div>
+
+  </main>
+
+</div>
+
+<div class="app-container">
+
+  <!-- Sidebar -->
+  <aside class="sidebar" [class.collapsed]="!isOpen">
+    <nav class="menu">
+
+      <a routerLink="/dashboard" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📊</span>
+        <span class="label" *ngIf="isOpen">Dashboard</span>
+      </a>
+
+      <a routerLink="/student" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">👨‍🎓</span>
+        <span class="label" *ngIf="isOpen">Students</span>
+      </a>
+
+      <a routerLink="/batch" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">💳</span>
+        <span class="label" *ngIf="isOpen">Batch</span>
+      </a>
+
+      <a routerLink="/enrollment" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📝</span>
+        <span class="label" *ngIf="isOpen">Enrollment</span>
+      </a>
+
+      <a routerLink="/reports" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📑</span>
+        <span class="label" *ngIf="isOpen">Fees</span>
+      </a>
+
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="content">
+
+    <!-- TOP HEADER -->
+    <header class="top-header">
+
+      <button class="toggle-btn" (click)="toggleSidebar()">☰</button>
+
+      <div class="user-info">
+        <span class="user-name animated-title">
+          👤 {{ loggedUserData.fullName }}
+        </span>
+
+       <button class="logout-btn-outline" (click)="logout()">
+  <span class="logout-text">LOG OUT</span>
+  <span class="logout-icon">⎋</span>
+    </button>
+      </div>
+
+    </header>
+
+    <!-- PAGE CONTENT -->
+    <div class="page-body">
+      <router-outlet></router-outlet>
+    </div>
+
+  </main>
+
+</div>
+
+<div class="app-container">
+
+  <!-- Sidebar -->
+  <aside class="sidebar" [class.collapsed]="!isOpen">
+    <nav class="menu">
+
+      <a routerLink="/dashboard" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📊</span>
+        <span class="label" *ngIf="isOpen">Dashboard</span>
+      </a>
+
+      <a routerLink="/student" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">👨‍🎓</span>
+        <span class="label" *ngIf="isOpen">Students</span>
+      </a>
+
+      <a routerLink="/batch" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">💳</span>
+        <span class="label" *ngIf="isOpen">Batch</span>
+      </a>
+
+      <a routerLink="/enrollment" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📝</span>
+        <span class="label" *ngIf="isOpen">Enrollment</span>
+      </a>
+
+      <a routerLink="/reports" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📑</span>
+        <span class="label" *ngIf="isOpen">Fees</span>
+      </a>
+
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="content">
+
+    <!-- TOP HEADER -->
+    <header class="top-header">
+
+      <button class="toggle-btn" (click)="toggleSidebar()">☰</button>
+
+      <div class="user-info">
+        <span class="user-name animated-title">
+          👤 {{ loggedUserData.fullName }}
+        </span>
+
+       <button class="logout-btn-outline" (click)="logout()">
+  <span class="logout-text">LOG OUT</span>
+  <span class="logout-icon">⎋</span>
+    </button>
+      </div>
+
+    </header>
+
+    <!-- PAGE CONTENT -->
+    <div class="page-body">
+      <router-outlet></router-outlet>
+    </div>
+
+  </main>
+
+</div>
+
+<div class="app-container">
+
+  <!-- Sidebar -->
+  <aside class="sidebar" [class.collapsed]="!isOpen">
+    <nav class="menu">
+
+      <a routerLink="/dashboard" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📊</span>
+        <span class="label" *ngIf="isOpen">Dashboard</span>
+      </a>
+
+      <a routerLink="/student" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">👨‍🎓</span>
+        <span class="label" *ngIf="isOpen">Students</span>
+      </a>
+
+      <a routerLink="/batch" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">💳</span>
+        <span class="label" *ngIf="isOpen">Batch</span>
+      </a>
+
+      <a routerLink="/enrollment" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📝</span>
+        <span class="label" *ngIf="isOpen">Enrollment</span>
+      </a>
+
+      <a routerLink="/reports" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📑</span>
+        <span class="label" *ngIf="isOpen">Fees</span>
+      </a>
+
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="content">
+
+    <!-- TOP HEADER -->
+    <header class="top-header">
+
+      <button class="toggle-btn" (click)="toggleSidebar()">☰</button>
+
+      <div class="user-info">
+        <span class="user-name animated-title">
+          👤 {{ loggedUserData.fullName }}
+        </span>
+
+       <button class="logout-btn-outline" (click)="logout()">
+  <span class="logout-text">LOG OUT</span>
+  <span class="logout-icon">⎋</span>
+    </button>
+      </div>
+
+    </header>
+
+    <!-- PAGE CONTENT -->
+    <div class="page-body">
+      <router-outlet></router-outlet>
+    </div>
+
+  </main>
+
+</div>
+
+<div class="app-container">
+
+  <!-- Sidebar -->
+  <aside class="sidebar" [class.collapsed]="!isOpen">
+    <nav class="menu">
+
+      <a routerLink="/dashboard" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📊</span>
+        <span class="label" *ngIf="isOpen">Dashboard</span>
+      </a>
+
+      <a routerLink="/student" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">👨‍🎓</span>
+        <span class="label" *ngIf="isOpen">Students</span>
+      </a>
+
+      <a routerLink="/batch" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">💳</span>
+        <span class="label" *ngIf="isOpen">Batch</span>
+      </a>
+
+      <a routerLink="/enrollment" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📝</span>
+        <span class="label" *ngIf="isOpen">Enrollment</span>
+      </a>
+
+      <a routerLink="/reports" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📑</span>
+        <span class="label" *ngIf="isOpen">Fees</span>
+      </a>
+
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="content">
+
+    <!-- TOP HEADER -->
+    <header class="top-header">
+
+      <button class="toggle-btn" (click)="toggleSidebar()">☰</button>
+
+      <div class="user-info">
+        <span class="user-name animated-title">
+          👤 {{ loggedUserData.fullName }}
+        </span>
+
+       <button class="logout-btn-outline" (click)="logout()">
+  <span class="logout-text">LOG OUT</span>
+  <span class="logout-icon">⎋</span>
+    </button>
+      </div>
+
+    </header>
+
+    <!-- PAGE CONTENT -->
+    <div class="page-body">
+      <router-outlet></router-outlet>
+    </div>
+
+  </main>
+
+</div>
+
+<div class="app-container">
+
+  <!-- Sidebar -->
+  <aside class="sidebar" [class.collapsed]="!isOpen">
+    <nav class="menu">
+
+      <a routerLink="/dashboard" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📊</span>
+        <span class="label" *ngIf="isOpen">Dashboard</span>
+      </a>
+
+      <a routerLink="/student" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">👨‍🎓</span>
+        <span class="label" *ngIf="isOpen">Students</span>
+      </a>
+
+      <a routerLink="/batch" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">💳</span>
+        <span class="label" *ngIf="isOpen">Batch</span>
+      </a>
+
+      <a routerLink="/enrollment" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📝</span>
+        <span class="label" *ngIf="isOpen">Enrollment</span>
+      </a>
+
+      <a routerLink="/reports" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📑</span>
+        <span class="label" *ngIf="isOpen">Fees</span>
+      </a>
+
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="content">
+
+    <!-- TOP HEADER -->
+    <header class="top-header">
+
+      <button class="toggle-btn" (click)="toggleSidebar()">☰</button>
+
+      <div class="user-info">
+        <span class="user-name animated-title">
+          👤 {{ loggedUserData.fullName }}
+        </span>
+
+       <button class="logout-btn-outline" (click)="logout()">
+  <span class="logout-text">LOG OUT</span>
+  <span class="logout-icon">⎋</span>
+    </button>
+      </div>
+
+    </header>
+
+    <!-- PAGE CONTENT -->
+    <div class="page-body">
+      <router-outlet></router-outlet>
+    </div>
+
+  </main>
+
+</div>
+
+
+<div class="app-container">
+
+  <!-- Sidebar -->
+  <aside class="sidebar" [class.collapsed]="!isOpen">
+    <nav class="menu">
+
+      <a routerLink="/dashboard" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📊</span>
+        <span class="label" *ngIf="isOpen">Dashboard</span>
+      </a>
+
+      <a routerLink="/student" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">👨‍🎓</span>
+        <span class="label" *ngIf="isOpen">Students</span>
+      </a>
+
+      <a routerLink="/batch" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">💳</span>
+        <span class="label" *ngIf="isOpen">Batch</span>
+      </a>
+
+      <a routerLink="/enrollment" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📝</span>
+        <span class="label" *ngIf="isOpen">Enrollment</span>
+      </a>
+
+      <a routerLink="/reports" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📑</span>
+        <span class="label" *ngIf="isOpen">Fees</span>
+      </a>
+
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="content">
+
+    <!-- TOP HEADER -->
+    <header class="top-header">
+
+      <button class="toggle-btn" (click)="toggleSidebar()">☰</button>
+
+      <div class="user-info">
+        <span class="user-name animated-title">
+          👤 {{ loggedUserData.fullName }}
+        </span>
+
+       <button class="logout-btn-outline" (click)="logout()">
+  <span class="logout-text">LOG OUT</span>
+  <span class="logout-icon">⎋</span>
+    </button>
+      </div>
+
+    </header>
+
+    <!-- PAGE CONTENT -->
+    <div class="page-body">
+      <router-outlet></router-outlet>
+    </div>
+
+  </main>
+
+</div>
+
+
+<div class="app-container">
+
+  <!-- Sidebar -->
+  <aside class="sidebar" [class.collapsed]="!isOpen">
+    <nav class="menu">
+
+      <a routerLink="/dashboard" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📊</span>
+        <span class="label" *ngIf="isOpen">Dashboard</span>
+      </a>
+
+      <a routerLink="/student" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">👨‍🎓</span>
+        <span class="label" *ngIf="isOpen">Students</span>
+      </a>
+
+      <a routerLink="/batch" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">💳</span>
+        <span class="label" *ngIf="isOpen">Batch</span>
+      </a>
+
+      <a routerLink="/enrollment" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📝</span>
+        <span class="label" *ngIf="isOpen">Enrollment</span>
+      </a>
+
+      <a routerLink="/reports" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📑</span>
+        <span class="label" *ngIf="isOpen">Fees</span>
+      </a>
+
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="content">
+
+    <!-- TOP HEADER -->
+    <header class="top-header">
+
+      <button class="toggle-btn" (click)="toggleSidebar()">☰</button>
+
+      <div class="user-info">
+        <span class="user-name animated-title">
+          👤 {{ loggedUserData.fullName }}
+        </span>
+
+       <button class="logout-btn-outline" (click)="logout()">
+  <span class="logout-text">LOG OUT</span>
+  <span class="logout-icon">⎋</span>
+    </button>
+      </div>
+
+    </header>
+
+    <!-- PAGE CONTENT -->
+    <div class="page-body">
+      <router-outlet></router-outlet>
+    </div>
+
+  </main>
+
+</div>
+
+<div class="app-container">
+
+  <!-- Sidebar -->
+  <aside class="sidebar" [class.collapsed]="!isOpen">
+    <nav class="menu">
+
+      <a routerLink="/dashboard" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📊</span>
+        <span class="label" *ngIf="isOpen">Dashboard</span>
+      </a>
+
+      <a routerLink="/student" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">👨‍🎓</span>
+        <span class="label" *ngIf="isOpen">Students</span>
+      </a>
+
+      <a routerLink="/batch" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">💳</span>
+        <span class="label" *ngIf="isOpen">Batch</span>
+      </a>
+
+      <a routerLink="/enrollment" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📝</span>
+        <span class="label" *ngIf="isOpen">Enrollment</span>
+      </a>
+
+      <a routerLink="/reports" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📑</span>
+        <span class="label" *ngIf="isOpen">Fees</span>
+      </a>
+
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="content">
+
+    <!-- TOP HEADER -->
+    <header class="top-header">
+
+      <button class="toggle-btn" (click)="toggleSidebar()">☰</button>
+
+      <div class="user-info">
+        <span class="user-name animated-title">
+          👤 {{ loggedUserData.fullName }}
+        </span>
+
+       <button class="logout-btn-outline" (click)="logout()">
+  <span class="logout-text">LOG OUT</span>
+  <span class="logout-icon">⎋</span>
+    </button>
+      </div>
+
+    </header>
+
+    <!-- PAGE CONTENT -->
+    <div class="page-body">
+      <router-outlet></router-outlet>
+    </div>
+
+  </main>
+
+</div>
+
+<div class="app-container">
+
+  <!-- Sidebar -->
+  <aside class="sidebar" [class.collapsed]="!isOpen">
+    <nav class="menu">
+
+      <a routerLink="/dashboard" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📊</span>
+        <span class="label" *ngIf="isOpen">Dashboard</span>
+      </a>
+
+      <a routerLink="/student" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">👨‍🎓</span>
+        <span class="label" *ngIf="isOpen">Students</span>
+      </a>
+
+      <a routerLink="/batch" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">💳</span>
+        <span class="label" *ngIf="isOpen">Batch</span>
+      </a>
+
+      <a routerLink="/enrollment" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📝</span>
+        <span class="label" *ngIf="isOpen">Enrollment</span>
+      </a>
+
+      <a routerLink="/reports" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📑</span>
+        <span class="label" *ngIf="isOpen">Fees</span>
+      </a>
+
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="content">
+
+    <!-- TOP HEADER -->
+    <header class="top-header">
+
+      <button class="toggle-btn" (click)="toggleSidebar()">☰</button>
+
+      <div class="user-info">
+        <span class="user-name animated-title">
+          👤 {{ loggedUserData.fullName }}
+        </span>
+
+       <button class="logout-btn-outline" (click)="logout()">
+  <span class="logout-text">LOG OUT</span>
+  <span class="logout-icon">⎋</span>
+    </button>
+      </div>
+
+    </header>
+
+    <!-- PAGE CONTENT -->
+    <div class="page-body">
+      <router-outlet></router-outlet>
+    </div>
+
+  </main>
+
+</div>
+
+<div class="app-container">
+
+  <!-- Sidebar -->
+  <aside class="sidebar" [class.collapsed]="!isOpen">
+    <nav class="menu">
+
+      <a routerLink="/dashboard" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📊</span>
+        <span class="label" *ngIf="isOpen">Dashboard</span>
+      </a>
+
+      <a routerLink="/student" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">👨‍🎓</span>
+        <span class="label" *ngIf="isOpen">Students</span>
+      </a>
+
+      <a routerLink="/batch" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">💳</span>
+        <span class="label" *ngIf="isOpen">Batch</span>
+      </a>
+
+      <a routerLink="/enrollment" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📝</span>
+        <span class="label" *ngIf="isOpen">Enrollment</span>
+      </a>
+
+      <a routerLink="/reports" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📑</span>
+        <span class="label" *ngIf="isOpen">Fees</span>
+      </a>
+
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="content">
+
+    <!-- TOP HEADER -->
+    <header class="top-header">
+
+      <button class="toggle-btn" (click)="toggleSidebar()">☰</button>
+
+      <div class="user-info">
+        <span class="user-name animated-title">
+          👤 {{ loggedUserData.fullName }}
+        </span>
+
+       <button class="logout-btn-outline" (click)="logout()">
+  <span class="logout-text">LOG OUT</span>
+  <span class="logout-icon">⎋</span>
+    </button>
+      </div>
+
+    </header>
+
+    <!-- PAGE CONTENT -->
+    <div class="page-body">
+      <router-outlet></router-outlet>
+    </div>
+
+  </main>
+
+</div>
+
+<div class="app-container">
+
+  <!-- Sidebar -->
+  <aside class="sidebar" [class.collapsed]="!isOpen">
+    <nav class="menu">
+
+      <a routerLink="/dashboard" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📊</span>
+        <span class="label" *ngIf="isOpen">Dashboard</span>
+      </a>
+
+      <a routerLink="/student" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">👨‍🎓</span>
+        <span class="label" *ngIf="isOpen">Students</span>
+      </a>
+
+      <a routerLink="/batch" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">💳</span>
+        <span class="label" *ngIf="isOpen">Batch</span>
+      </a>
+
+      <a routerLink="/enrollment" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📝</span>
+        <span class="label" *ngIf="isOpen">Enrollment</span>
+      </a>
+
+      <a routerLink="/reports" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📑</span>
+        <span class="label" *ngIf="isOpen">Fees</span>
+      </a>
+
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="content">
+
+    <!-- TOP HEADER -->
+    <header class="top-header">
+
+      <button class="toggle-btn" (click)="toggleSidebar()">☰</button>
+
+      <div class="user-info">
+        <span class="user-name animated-title">
+          👤 {{ loggedUserData.fullName }}
+        </span>
+
+       <button class="logout-btn-outline" (click)="logout()">
+  <span class="logout-text">LOG OUT</span>
+  <span class="logout-icon">⎋</span>
+    </button>
+      </div>
+
+    </header>
+
+    <!-- PAGE CONTENT -->
+    <div class="page-body">
+      <router-outlet></router-outlet>
+    </div>
+
+  </main>
+
+</div>
+
+<div class="app-container">
+
+  <!-- Sidebar -->
+  <aside class="sidebar" [class.collapsed]="!isOpen">
+    <nav class="menu">
+
+      <a routerLink="/dashboard" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📊</span>
+        <span class="label" *ngIf="isOpen">Dashboard</span>
+      </a>
+
+      <a routerLink="/student" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">👨‍🎓</span>
+        <span class="label" *ngIf="isOpen">Students</span>
+      </a>
+
+      <a routerLink="/batch" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">💳</span>
+        <span class="label" *ngIf="isOpen">Batch</span>
+      </a>
+
+      <a routerLink="/enrollment" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📝</span>
+        <span class="label" *ngIf="isOpen">Enrollment</span>
+      </a>
+
+      <a routerLink="/reports" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📑</span>
+        <span class="label" *ngIf="isOpen">Fees</span>
+      </a>
+
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="content">
+
+    <!-- TOP HEADER -->
+    <header class="top-header">
+
+      <button class="toggle-btn" (click)="toggleSidebar()">☰</button>
+
+      <div class="user-info">
+        <span class="user-name animated-title">
+          👤 {{ loggedUserData.fullName }}
+        </span>
+
+       <button class="logout-btn-outline" (click)="logout()">
+  <span class="logout-text">LOG OUT</span>
+  <span class="logout-icon">⎋</span>
+    </button>
+      </div>
+
+    </header>
+
+    <!-- PAGE CONTENT -->
+    <div class="page-body">
+      <router-outlet></router-outlet>
+    </div>
+
+  </main>
+
+</div>
+
+<div class="app-container">
+
+  <!-- Sidebar -->
+  <aside class="sidebar" [class.collapsed]="!isOpen">
+    <nav class="menu">
+
+      <a routerLink="/dashboard" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📊</span>
+        <span class="label" *ngIf="isOpen">Dashboard</span>
+      </a>
+
+      <a routerLink="/student" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">👨‍🎓</span>
+        <span class="label" *ngIf="isOpen">Students</span>
+      </a>
+
+      <a routerLink="/batch" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">💳</span>
+        <span class="label" *ngIf="isOpen">Batch</span>
+      </a>
+
+      <a routerLink="/enrollment" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📝</span>
+        <span class="label" *ngIf="isOpen">Enrollment</span>
+      </a>
+
+      <a routerLink="/reports" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📑</span>
+        <span class="label" *ngIf="isOpen">Fees</span>
+      </a>
+
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="content">
+
+    <!-- TOP HEADER -->
+    <header class="top-header">
+
+      <button class="toggle-btn" (click)="toggleSidebar()">☰</button>
+
+      <div class="user-info">
+        <span class="user-name animated-title">
+          👤 {{ loggedUserData.fullName }}
+        </span>
+
+       <button class="logout-btn-outline" (click)="logout()">
+  <span class="logout-text">LOG OUT</span>
+  <span class="logout-icon">⎋</span>
+    </button>
+      </div>
+
+    </header>
+
+    <!-- PAGE CONTENT -->
+    <div class="page-body">
+      <router-outlet></router-outlet>
+    </div>
+
+  </main>
+
+</div>
+
+<div class="app-container">
+
+  <!-- Sidebar -->
+  <aside class="sidebar" [class.collapsed]="!isOpen">
+    <nav class="menu">
+
+      <a routerLink="/dashboard" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📊</span>
+        <span class="label" *ngIf="isOpen">Dashboard</span>
+      </a>
+
+      <a routerLink="/student" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">👨‍🎓</span>
+        <span class="label" *ngIf="isOpen">Students</span>
+      </a>
+
+      <a routerLink="/batch" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">💳</span>
+        <span class="label" *ngIf="isOpen">Batch</span>
+      </a>
+
+      <a routerLink="/enrollment" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📝</span>
+        <span class="label" *ngIf="isOpen">Enrollment</span>
+      </a>
+
+      <a routerLink="/reports" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📑</span>
+        <span class="label" *ngIf="isOpen">Fees</span>
+      </a>
+
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="content">
+
+    <!-- TOP HEADER -->
+    <header class="top-header">
+
+      <button class="toggle-btn" (click)="toggleSidebar()">☰</button>
+
+      <div class="user-info">
+        <span class="user-name animated-title">
+          👤 {{ loggedUserData.fullName }}
+        </span>
+
+       <button class="logout-btn-outline" (click)="logout()">
+  <span class="logout-text">LOG OUT</span>
+  <span class="logout-icon">⎋</span>
+    </button>
+      </div>
+
+    </header>
+
+    <!-- PAGE CONTENT -->
+    <div class="page-body">
+      <router-outlet></router-outlet>
+    </div>
+
+  </main>
+
+</div>
+
+<div class="app-container">
+
+  <!-- Sidebar -->
+  <aside class="sidebar" [class.collapsed]="!isOpen">
+    <nav class="menu">
+
+      <a routerLink="/dashboard" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📊</span>
+        <span class="label" *ngIf="isOpen">Dashboard</span>
+      </a>
+
+      <a routerLink="/student" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">👨‍🎓</span>
+        <span class="label" *ngIf="isOpen">Students</span>
+      </a>
+
+      <a routerLink="/batch" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">💳</span>
+        <span class="label" *ngIf="isOpen">Batch</span>
+      </a>
+
+      <a routerLink="/enrollment" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📝</span>
+        <span class="label" *ngIf="isOpen">Enrollment</span>
+      </a>
+
+      <a routerLink="/reports" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📑</span>
+        <span class="label" *ngIf="isOpen">Fees</span>
+      </a>
+
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="content">
+
+    <!-- TOP HEADER -->
+    <header class="top-header">
+
+      <button class="toggle-btn" (click)="toggleSidebar()">☰</button>
+
+      <div class="user-info">
+        <span class="user-name animated-title">
+          👤 {{ loggedUserData.fullName }}
+        </span>
+
+       <button class="logout-btn-outline" (click)="logout()">
+  <span class="logout-text">LOG OUT</span>
+  <span class="logout-icon">⎋</span>
+    </button>
+      </div>
+
+    </header>
+
+    <!-- PAGE CONTENT -->
+    <div class="page-body">
+      <router-outlet></router-outlet>
+    </div>
+
+  </main>
+
+</div>
+
+
+<div class="app-container">
+
+  <!-- Sidebar -->
+  <aside class="sidebar" [class.collapsed]="!isOpen">
+    <nav class="menu">
+
+      <a routerLink="/dashboard" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📊</span>
+        <span class="label" *ngIf="isOpen">Dashboard</span>
+      </a>
+
+      <a routerLink="/student" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">👨‍🎓</span>
+        <span class="label" *ngIf="isOpen">Students</span>
+      </a>
+
+      <a routerLink="/batch" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">💳</span>
+        <span class="label" *ngIf="isOpen">Batch</span>
+      </a>
+
+      <a routerLink="/enrollment" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📝</span>
+        <span class="label" *ngIf="isOpen">Enrollment</span>
+      </a>
+
+      <a routerLink="/reports" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📑</span>
+        <span class="label" *ngIf="isOpen">Fees</span>
+      </a>
+
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="content">
+
+    <!-- TOP HEADER -->
+    <header class="top-header">
+
+      <button class="toggle-btn" (click)="toggleSidebar()">☰</button>
+
+      <div class="user-info">
+        <span class="user-name animated-title">
+          👤 {{ loggedUserData.fullName }}
+        </span>
+
+       <button class="logout-btn-outline" (click)="logout()">
+  <span class="logout-text">LOG OUT</span>
+  <span class="logout-icon">⎋</span>
+    </button>
+      </div>
+
+    </header>
+
+    <!-- PAGE CONTENT -->
+    <div class="page-body">
+      <router-outlet></router-outlet>
+    </div>
+
+  </main>
+
+</div>
+
+
+// Demo code
+
+
+
+<div class="app-container">
+
+  <!-- Sidebar -->
+  <aside class="sidebar" [class.collapsed]="!isOpen">
+    <nav class="menu">
+
+      <a routerLink="/dashboard" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📊</span>
+        <span class="label" *ngIf="isOpen">Dashboard</span>
+      </a>
+
+      <a routerLink="/student" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">👨‍🎓</span>
+        <span class="label" *ngIf="isOpen">Students</span>
+      </a>
+
+      <a routerLink="/batch" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">💳</span>
+        <span class="label" *ngIf="isOpen">Batch</span>
+      </a>
+
+      <a routerLink="/enrollment" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📝</span>
+        <span class="label" *ngIf="isOpen">Enrollment</span>
+      </a>
+
+      <a routerLink="/reports" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📑</span>
+        <span class="label" *ngIf="isOpen">Fees</span>
+      </a>
+
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="content">
+
+    <!-- TOP HEADER -->
+    <header class="top-header">
+
+      <button class="toggle-btn" (click)="toggleSidebar()">☰</button>
+
+      <div class="user-info">
+        <span class="user-name animated-title">
+          👤 {{ loggedUserData.fullName }}
+        </span>
+
+       <button class="logout-btn-outline" (click)="logout()">
+  <span class="logout-text">LOG OUT</span>
+  <span class="logout-icon">⎋</span>
+    </button>
+      </div>
+
+    </header>
+
+    <!-- PAGE CONTENT -->
+    <div class="page-body">
+      <router-outlet></router-outlet>
+    </div>
+
+  </main>
+
+</div>
+
+<div class="app-container">
+
+  <!-- Sidebar -->
+  <aside class="sidebar" [class.collapsed]="!isOpen">
+    <nav class="menu">
+
+      <a routerLink="/dashboard" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📊</span>
+        <span class="label" *ngIf="isOpen">Dashboard</span>
+      </a>
+
+      <a routerLink="/student" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">👨‍🎓</span>
+        <span class="label" *ngIf="isOpen">Students</span>
+      </a>
+
+      <a routerLink="/batch" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">💳</span>
+        <span class="label" *ngIf="isOpen">Batch</span>
+      </a>
+
+      <a routerLink="/enrollment" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📝</span>
+        <span class="label" *ngIf="isOpen">Enrollment</span>
+      </a>
+
+      <a routerLink="/reports" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📑</span>
+        <span class="label" *ngIf="isOpen">Fees</span>
+      </a>
+
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="content">
+
+    <!-- TOP HEADER -->
+    <header class="top-header">
+
+      <button class="toggle-btn" (click)="toggleSidebar()">☰</button>
+
+      <div class="user-info">
+        <span class="user-name animated-title">
+          👤 {{ loggedUserData.fullName }}
+        </span>
+
+       <button class="logout-btn-outline" (click)="logout()">
+  <span class="logout-text">LOG OUT</span>
+  <span class="logout-icon">⎋</span>
+    </button>
+      </div>
+
+    </header>
+
+    <!-- PAGE CONTENT -->
+    <div class="page-body">
+      <router-outlet></router-outlet>
+    </div>
+
+  </main>
+
+</div>
+
+<div class="app-container">
+
+  <!-- Sidebar -->
+  <aside class="sidebar" [class.collapsed]="!isOpen">
+    <nav class="menu">
+
+      <a routerLink="/dashboard" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📊</span>
+        <span class="label" *ngIf="isOpen">Dashboard</span>
+      </a>
+
+      <a routerLink="/student" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">👨‍🎓</span>
+        <span class="label" *ngIf="isOpen">Students</span>
+      </a>
+
+      <a routerLink="/batch" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">💳</span>
+        <span class="label" *ngIf="isOpen">Batch</span>
+      </a>
+
+      <a routerLink="/enrollment" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📝</span>
+        <span class="label" *ngIf="isOpen">Enrollment</span>
+      </a>
+
+      <a routerLink="/reports" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📑</span>
+        <span class="label" *ngIf="isOpen">Fees</span>
+      </a>
+
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="content">
+
+    <!-- TOP HEADER -->
+    <header class="top-header">
+
+      <button class="toggle-btn" (click)="toggleSidebar()">☰</button>
+
+      <div class="user-info">
+        <span class="user-name animated-title">
+          👤 {{ loggedUserData.fullName }}
+        </span>
+
+       <button class="logout-btn-outline" (click)="logout()">
+  <span class="logout-text">LOG OUT</span>
+  <span class="logout-icon">⎋</span>
+    </button>
+      </div>
+
+    </header>
+
+    <!-- PAGE CONTENT -->
+    <div class="page-body">
+      <router-outlet></router-outlet>
+    </div>
+
+  </main>
+
+</div>
+
+
+<div class="app-container">
+
+  <!-- Sidebar -->
+  <aside class="sidebar" [class.collapsed]="!isOpen">
+    <nav class="menu">
+
+      <a routerLink="/dashboard" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📊</span>
+        <span class="label" *ngIf="isOpen">Dashboard</span>
+      </a>
+
+      <a routerLink="/student" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">👨‍🎓</span>
+        <span class="label" *ngIf="isOpen">Students</span>
+      </a>
+
+      <a routerLink="/batch" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">💳</span>
+        <span class="label" *ngIf="isOpen">Batch</span>
+      </a>
+
+      <a routerLink="/enrollment" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📝</span>
+        <span class="label" *ngIf="isOpen">Enrollment</span>
+      </a>
+
+      <a routerLink="/reports" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📑</span>
+        <span class="label" *ngIf="isOpen">Fees</span>
+      </a>
+
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="content">
+
+    <!-- TOP HEADER -->
+    <header class="top-header">
+
+      <button class="toggle-btn" (click)="toggleSidebar()">☰</button>
+
+      <div class="user-info">
+        <span class="user-name animated-title">
+          👤 {{ loggedUserData.fullName }}
+        </span>
+
+       <button class="logout-btn-outline" (click)="logout()">
+  <span class="logout-text">LOG OUT</span>
+  <span class="logout-icon">⎋</span>
+    </button>
+      </div>
+
+    </header>
+
+    <!-- PAGE CONTENT -->
+    <div class="page-body">
+      <router-outlet></router-outlet>
+    </div>
+
+  </main>
+
+</div>
+<div class="app-container">
+
+  <!-- Sidebar -->
+  <aside class="sidebar" [class.collapsed]="!isOpen">
+    <nav class="menu">
+
+      <a routerLink="/dashboard" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📊</span>
+        <span class="label" *ngIf="isOpen">Dashboard</span>
+      </a>
+
+      <a routerLink="/student" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">👨‍🎓</span>
+        <span class="label" *ngIf="isOpen">Students</span>
+      </a>
+
+      <a routerLink="/batch" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">💳</span>
+        <span class="label" *ngIf="isOpen">Batch</span>
+      </a>
+
+      <a routerLink="/enrollment" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📝</span>
+        <span class="label" *ngIf="isOpen">Enrollment</span>
+      </a>
+
+      <a routerLink="/reports" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📑</span>
+        <span class="label" *ngIf="isOpen">Fees</span>
+      </a>
+
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="content">
+
+    <!-- TOP HEADER -->
+    <header class="top-header">
+
+      <button class="toggle-btn" (click)="toggleSidebar()">☰</button>
+
+      <div class="user-info">
+        <span class="user-name animated-title">
+          👤 {{ loggedUserData.fullName }}
+        </span>
+
+       <button class="logout-btn-outline" (click)="logout()">
+  <span class="logout-text">LOG OUT</span>
+  <span class="logout-icon">⎋</span>
+    </button>
+      </div>
+
+    </header>
+
+    <!-- PAGE CONTENT -->
+    <div class="page-body">
+      <router-outlet></router-outlet>
+    </div>
+
+  </main>
+
+</div>
+
+<div class="app-container">
+
+  <!-- Sidebar -->
+  <aside class="sidebar" [class.collapsed]="!isOpen">
+    <nav class="menu">
+
+      <a routerLink="/dashboard" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📊</span>
+        <span class="label" *ngIf="isOpen">Dashboard</span>
+      </a>
+
+      <a routerLink="/student" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">👨‍🎓</span>
+        <span class="label" *ngIf="isOpen">Students</span>
+      </a>
+
+      <a routerLink="/batch" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">💳</span>
+        <span class="label" *ngIf="isOpen">Batch</span>
+      </a>
+
+      <a routerLink="/enrollment" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📝</span>
+        <span class="label" *ngIf="isOpen">Enrollment</span>
+      </a>
+
+      <a routerLink="/reports" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📑</span>
+        <span class="label" *ngIf="isOpen">Fees</span>
+      </a>
+
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="content">
+
+    <!-- TOP HEADER -->
+    <header class="top-header">
+
+      <button class="toggle-btn" (click)="toggleSidebar()">☰</button>
+
+      <div class="user-info">
+        <span class="user-name animated-title">
+          👤 {{ loggedUserData.fullName }}
+        </span>
+
+       <button class="logout-btn-outline" (click)="logout()">
+  <span class="logout-text">LOG OUT</span>
+  <span class="logout-icon">⎋</span>
+    </button>
+      </div>
+
+    </header>
+
+    <!-- PAGE CONTENT -->
+    <div class="page-body">
+      <router-outlet></router-outlet>
+    </div>
+
+  </main>
+
+</div>
+
+<div class="app-container">
+
+  <!-- Sidebar -->
+  <aside class="sidebar" [class.collapsed]="!isOpen">
+    <nav class="menu">
+
+      <a routerLink="/dashboard" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📊</span>
+        <span class="label" *ngIf="isOpen">Dashboard</span>
+      </a>
+
+      <a routerLink="/student" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">👨‍🎓</span>
+        <span class="label" *ngIf="isOpen">Students</span>
+      </a>
+
+      <a routerLink="/batch" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">💳</span>
+        <span class="label" *ngIf="isOpen">Batch</span>
+      </a>
+
+      <a routerLink="/enrollment" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📝</span>
+        <span class="label" *ngIf="isOpen">Enrollment</span>
+      </a>
+
+      <a routerLink="/reports" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📑</span>
+        <span class="label" *ngIf="isOpen">Fees</span>
+      </a>
+
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="content">
+
+    <!-- TOP HEADER -->
+    <header class="top-header">
+
+      <button class="toggle-btn" (click)="toggleSidebar()">☰</button>
+
+      <div class="user-info">
+        <span class="user-name animated-title">
+          👤 {{ loggedUserData.fullName }}
+        </span>
+
+       <button class="logout-btn-outline" (click)="logout()">
+  <span class="logout-text">LOG OUT</span>
+  <span class="logout-icon">⎋</span>
+    </button>
+      </div>
+
+    </header>
+
+    <!-- PAGE CONTENT -->
+    <div class="page-body">
+      <router-outlet></router-outlet>
+    </div>
+
+  </main>
+
+</div>
+
+<div class="app-container">
+
+  <!-- Sidebar -->
+  <aside class="sidebar" [class.collapsed]="!isOpen">
+    <nav class="menu">
+
+      <a routerLink="/dashboard" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📊</span>
+        <span class="label" *ngIf="isOpen">Dashboard</span>
+      </a>
+
+      <a routerLink="/student" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">👨‍🎓</span>
+        <span class="label" *ngIf="isOpen">Students</span>
+      </a>
+
+      <a routerLink="/batch" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">💳</span>
+        <span class="label" *ngIf="isOpen">Batch</span>
+      </a>
+
+      <a routerLink="/enrollment" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📝</span>
+        <span class="label" *ngIf="isOpen">Enrollment</span>
+      </a>
+
+      <a routerLink="/reports" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📑</span>
+        <span class="label" *ngIf="isOpen">Fees</span>
+      </a>
+
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="content">
+
+    <!-- TOP HEADER -->
+    <header class="top-header">
+
+      <button class="toggle-btn" (click)="toggleSidebar()">☰</button>
+
+      <div class="user-info">
+        <span class="user-name animated-title">
+          👤 {{ loggedUserData.fullName }}
+        </span>
+
+       <button class="logout-btn-outline" (click)="logout()">
+  <span class="logout-text">LOG OUT</span>
+  <span class="logout-icon">⎋</span>
+    </button>
+      </div>
+
+    </header>
+
+    <!-- PAGE CONTENT -->
+    <div class="page-body">
+      <router-outlet></router-outlet>
+    </div>
+
+  </main>
+
+</div>
+
+<div class="app-container">
+
+  <!-- Sidebar -->
+  <aside class="sidebar" [class.collapsed]="!isOpen">
+    <nav class="menu">
+
+      <a routerLink="/dashboard" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📊</span>
+        <span class="label" *ngIf="isOpen">Dashboard</span>
+      </a>
+
+      <a routerLink="/student" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">👨‍🎓</span>
+        <span class="label" *ngIf="isOpen">Students</span>
+      </a>
+
+      <a routerLink="/batch" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">💳</span>
+        <span class="label" *ngIf="isOpen">Batch</span>
+      </a>
+
+      <a routerLink="/enrollment" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📝</span>
+        <span class="label" *ngIf="isOpen">Enrollment</span>
+      </a>
+
+      <a routerLink="/reports" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📑</span>
+        <span class="label" *ngIf="isOpen">Fees</span>
+      </a>
+
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="content">
+
+    <!-- TOP HEADER -->
+    <header class="top-header">
+
+      <button class="toggle-btn" (click)="toggleSidebar()">☰</button>
+
+      <div class="user-info">
+        <span class="user-name animated-title">
+          👤 {{ loggedUserData.fullName }}
+        </span>
+
+       <button class="logout-btn-outline" (click)="logout()">
+  <span class="logout-text">LOG OUT</span>
+  <span class="logout-icon">⎋</span>
+    </button>
+      </div>
+
+    </header>
+
+    <!-- PAGE CONTENT -->
+    <div class="page-body">
+      <router-outlet></router-outlet>
+    </div>
+
+  </main>
+
+</div>
+
+<div class="app-container">
+
+  <!-- Sidebar -->
+  <aside class="sidebar" [class.collapsed]="!isOpen">
+    <nav class="menu">
+
+      <a routerLink="/dashboard" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📊</span>
+        <span class="label" *ngIf="isOpen">Dashboard</span>
+      </a>
+
+      <a routerLink="/student" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">👨‍🎓</span>
+        <span class="label" *ngIf="isOpen">Students</span>
+      </a>
+
+      <a routerLink="/batch" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">💳</span>
+        <span class="label" *ngIf="isOpen">Batch</span>
+      </a>
+
+      <a routerLink="/enrollment" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📝</span>
+        <span class="label" *ngIf="isOpen">Enrollment</span>
+      </a>
+
+      <a routerLink="/reports" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📑</span>
+        <span class="label" *ngIf="isOpen">Fees</span>
+      </a>
+
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="content">
+
+    <!-- TOP HEADER -->
+    <header class="top-header">
+
+      <button class="toggle-btn" (click)="toggleSidebar()">☰</button>
+
+      <div class="user-info">
+        <span class="user-name animated-title">
+          👤 {{ loggedUserData.fullName }}
+        </span>
+
+       <button class="logout-btn-outline" (click)="logout()">
+  <span class="logout-text">LOG OUT</span>
+  <span class="logout-icon">⎋</span>
+    </button>
+      </div>
+
+    </header>
+
+    <!-- PAGE CONTENT -->
+    <div class="page-body">
+      <router-outlet></router-outlet>
+    </div>
+
+  </main>
+
+</div>
+
+
+<div class="app-container">
+
+  <!-- Sidebar -->
+  <aside class="sidebar" [class.collapsed]="!isOpen">
+    <nav class="menu">
+
+      <a routerLink="/dashboard" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📊</span>
+        <span class="label" *ngIf="isOpen">Dashboard</span>
+      </a>
+
+      <a routerLink="/student" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">👨‍🎓</span>
+        <span class="label" *ngIf="isOpen">Students</span>
+      </a>
+
+      <a routerLink="/batch" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">💳</span>
+        <span class="label" *ngIf="isOpen">Batch</span>
+      </a>
+
+      <a routerLink="/enrollment" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📝</span>
+        <span class="label" *ngIf="isOpen">Enrollment</span>
+      </a>
+
+      <a routerLink="/reports" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📑</span>
+        <span class="label" *ngIf="isOpen">Fees</span>
+      </a>
+
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="content">
+
+    <!-- TOP HEADER -->
+    <header class="top-header">
+
+      <button class="toggle-btn" (click)="toggleSidebar()">☰</button>
+
+      <div class="user-info">
+        <span class="user-name animated-title">
+          👤 {{ loggedUserData.fullName }}
+        </span>
+
+       <button class="logout-btn-outline" (click)="logout()">
+  <span class="logout-text">LOG OUT</span>
+  <span class="logout-icon">⎋</span>
+    </button>
+      </div>
+
+    </header>
+
+    <!-- PAGE CONTENT -->
+    <div class="page-body">
+      <router-outlet></router-outlet>
+    </div>
+
+  </main>
+
+</div>
+
+
+<div class="app-container">
+
+  <!-- Sidebar -->
+  <aside class="sidebar" [class.collapsed]="!isOpen">
+    <nav class="menu">
+
+      <a routerLink="/dashboard" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📊</span>
+        <span class="label" *ngIf="isOpen">Dashboard</span>
+      </a>
+
+      <a routerLink="/student" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">👨‍🎓</span>
+        <span class="label" *ngIf="isOpen">Students</span>
+      </a>
+
+      <a routerLink="/batch" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">💳</span>
+        <span class="label" *ngIf="isOpen">Batch</span>
+      </a>
+
+      <a routerLink="/enrollment" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📝</span>
+        <span class="label" *ngIf="isOpen">Enrollment</span>
+      </a>
+
+      <a routerLink="/reports" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📑</span>
+        <span class="label" *ngIf="isOpen">Fees</span>
+      </a>
+
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="content">
+
+    <!-- TOP HEADER -->
+    <header class="top-header">
+
+      <button class="toggle-btn" (click)="toggleSidebar()">☰</button>
+
+      <div class="user-info">
+        <span class="user-name animated-title">
+          👤 {{ loggedUserData.fullName }}
+        </span>
+
+       <button class="logout-btn-outline" (click)="logout()">
+  <span class="logout-text">LOG OUT</span>
+  <span class="logout-icon">⎋</span>
+    </button>
+      </div>
+
+    </header>
+
+    <!-- PAGE CONTENT -->
+    <div class="page-body">
+      <router-outlet></router-outlet>
+    </div>
+
+  </main>
+
+</div>
+
+<div class="app-container">
+
+  <!-- Sidebar -->
+  <aside class="sidebar" [class.collapsed]="!isOpen">
+    <nav class="menu">
+
+      <a routerLink="/dashboard" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📊</span>
+        <span class="label" *ngIf="isOpen">Dashboard</span>
+      </a>
+
+      <a routerLink="/student" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">👨‍🎓</span>
+        <span class="label" *ngIf="isOpen">Students</span>
+      </a>
+
+      <a routerLink="/batch" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">💳</span>
+        <span class="label" *ngIf="isOpen">Batch</span>
+      </a>
+
+      <a routerLink="/enrollment" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📝</span>
+        <span class="label" *ngIf="isOpen">Enrollment</span>
+      </a>
+
+      <a routerLink="/reports" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📑</span>
+        <span class="label" *ngIf="isOpen">Fees</span>
+      </a>
+
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="content">
+
+    <!-- TOP HEADER -->
+    <header class="top-header">
+
+      <button class="toggle-btn" (click)="toggleSidebar()">☰</button>
+
+      <div class="user-info">
+        <span class="user-name animated-title">
+          👤 {{ loggedUserData.fullName }}
+        </span>
+
+       <button class="logout-btn-outline" (click)="logout()">
+  <span class="logout-text">LOG OUT</span>
+  <span class="logout-icon">⎋</span>
+    </button>
+      </div>
+
+    </header>
+
+    <!-- PAGE CONTENT -->
+    <div class="page-body">
+      <router-outlet></router-outlet>
+    </div>
+
+  </main>
+
+</div>
+
+<div class="app-container">
+
+  <!-- Sidebar -->
+  <aside class="sidebar" [class.collapsed]="!isOpen">
+    <nav class="menu">
+
+      <a routerLink="/dashboard" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📊</span>
+        <span class="label" *ngIf="isOpen">Dashboard</span>
+      </a>
+
+      <a routerLink="/student" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">👨‍🎓</span>
+        <span class="label" *ngIf="isOpen">Students</span>
+      </a>
+
+      <a routerLink="/batch" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">💳</span>
+        <span class="label" *ngIf="isOpen">Batch</span>
+      </a>
+
+      <a routerLink="/enrollment" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📝</span>
+        <span class="label" *ngIf="isOpen">Enrollment</span>
+      </a>
+
+      <a routerLink="/reports" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📑</span>
+        <span class="label" *ngIf="isOpen">Fees</span>
+      </a>
+
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="content">
+
+    <!-- TOP HEADER -->
+    <header class="top-header">
+
+      <button class="toggle-btn" (click)="toggleSidebar()">☰</button>
+
+      <div class="user-info">
+        <span class="user-name animated-title">
+          👤 {{ loggedUserData.fullName }}
+        </span>
+
+       <button class="logout-btn-outline" (click)="logout()">
+  <span class="logout-text">LOG OUT</span>
+  <span class="logout-icon">⎋</span>
+    </button>
+      </div>
+
+    </header>
+
+    <!-- PAGE CONTENT -->
+    <div class="page-body">
+      <router-outlet></router-outlet>
+    </div>
+
+  </main>
+
+</div>
+
+<div class="app-container">
+
+  <!-- Sidebar -->
+  <aside class="sidebar" [class.collapsed]="!isOpen">
+    <nav class="menu">
+
+      <a routerLink="/dashboard" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📊</span>
+        <span class="label" *ngIf="isOpen">Dashboard</span>
+      </a>
+
+      <a routerLink="/student" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">👨‍🎓</span>
+        <span class="label" *ngIf="isOpen">Students</span>
+      </a>
+
+      <a routerLink="/batch" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">💳</span>
+        <span class="label" *ngIf="isOpen">Batch</span>
+      </a>
+
+      <a routerLink="/enrollment" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📝</span>
+        <span class="label" *ngIf="isOpen">Enrollment</span>
+      </a>
+
+      <a routerLink="/reports" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📑</span>
+        <span class="label" *ngIf="isOpen">Fees</span>
+      </a>
+
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="content">
+
+    <!-- TOP HEADER -->
+    <header class="top-header">
+
+      <button class="toggle-btn" (click)="toggleSidebar()">☰</button>
+
+      <div class="user-info">
+        <span class="user-name animated-title">
+          👤 {{ loggedUserData.fullName }}
+        </span>
+
+       <button class="logout-btn-outline" (click)="logout()">
+  <span class="logout-text">LOG OUT</span>
+  <span class="logout-icon">⎋</span>
+    </button>
+      </div>
+
+    </header>
+
+    <!-- PAGE CONTENT -->
+    <div class="page-body">
+      <router-outlet></router-outlet>
+    </div>
+
+  </main>
+
+</div>
+
+<div class="app-container">
+
+  <!-- Sidebar -->
+  <aside class="sidebar" [class.collapsed]="!isOpen">
+    <nav class="menu">
+
+      <a routerLink="/dashboard" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📊</span>
+        <span class="label" *ngIf="isOpen">Dashboard</span>
+      </a>
+
+      <a routerLink="/student" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">👨‍🎓</span>
+        <span class="label" *ngIf="isOpen">Students</span>
+      </a>
+
+      <a routerLink="/batch" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">💳</span>
+        <span class="label" *ngIf="isOpen">Batch</span>
+      </a>
+
+      <a routerLink="/enrollment" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📝</span>
+        <span class="label" *ngIf="isOpen">Enrollment</span>
+      </a>
+
+      <a routerLink="/reports" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📑</span>
+        <span class="label" *ngIf="isOpen">Fees</span>
+      </a>
+
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="content">
+
+    <!-- TOP HEADER -->
+    <header class="top-header">
+
+      <button class="toggle-btn" (click)="toggleSidebar()">☰</button>
+
+      <div class="user-info">
+        <span class="user-name animated-title">
+          👤 {{ loggedUserData.fullName }}
+        </span>
+
+       <button class="logout-btn-outline" (click)="logout()">
+  <span class="logout-text">LOG OUT</span>
+  <span class="logout-icon">⎋</span>
+    </button>
+      </div>
+
+    </header>
+
+    <!-- PAGE CONTENT -->
+    <div class="page-body">
+      <router-outlet></router-outlet>
+    </div>
+
+  </main>
+
+</div>
+
+<div class="app-container">
+
+  <!-- Sidebar -->
+  <aside class="sidebar" [class.collapsed]="!isOpen">
+    <nav class="menu">
+
+      <a routerLink="/dashboard" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📊</span>
+        <span class="label" *ngIf="isOpen">Dashboard</span>
+      </a>
+
+      <a routerLink="/student" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">👨‍🎓</span>
+        <span class="label" *ngIf="isOpen">Students</span>
+      </a>
+
+      <a routerLink="/batch" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">💳</span>
+        <span class="label" *ngIf="isOpen">Batch</span>
+      </a>
+
+      <a routerLink="/enrollment" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📝</span>
+        <span class="label" *ngIf="isOpen">Enrollment</span>
+      </a>
+
+      <a routerLink="/reports" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📑</span>
+        <span class="label" *ngIf="isOpen">Fees</span>
+      </a>
+
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="content">
+
+    <!-- TOP HEADER -->
+    <header class="top-header">
+
+      <button class="toggle-btn" (click)="toggleSidebar()">☰</button>
+
+      <div class="user-info">
+        <span class="user-name animated-title">
+          👤 {{ loggedUserData.fullName }}
+        </span>
+
+       <button class="logout-btn-outline" (click)="logout()">
+  <span class="logout-text">LOG OUT</span>
+  <span class="logout-icon">⎋</span>
+    </button>
+      </div>
+
+    </header>
+
+    <!-- PAGE CONTENT -->
+    <div class="page-body">
+      <router-outlet></router-outlet>
+    </div>
+
+  </main>
+
+</div>
+
+<div class="app-container">
+
+  <!-- Sidebar -->
+  <aside class="sidebar" [class.collapsed]="!isOpen">
+    <nav class="menu">
+
+      <a routerLink="/dashboard" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📊</span>
+        <span class="label" *ngIf="isOpen">Dashboard</span>
+      </a>
+
+      <a routerLink="/student" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">👨‍🎓</span>
+        <span class="label" *ngIf="isOpen">Students</span>
+      </a>
+
+      <a routerLink="/batch" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">💳</span>
+        <span class="label" *ngIf="isOpen">Batch</span>
+      </a>
+
+      <a routerLink="/enrollment" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📝</span>
+        <span class="label" *ngIf="isOpen">Enrollment</span>
+      </a>
+
+      <a routerLink="/reports" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📑</span>
+        <span class="label" *ngIf="isOpen">Fees</span>
+      </a>
+
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="content">
+
+    <!-- TOP HEADER -->
+    <header class="top-header">
+
+      <button class="toggle-btn" (click)="toggleSidebar()">☰</button>
+
+      <div class="user-info">
+        <span class="user-name animated-title">
+          👤 {{ loggedUserData.fullName }}
+        </span>
+
+       <button class="logout-btn-outline" (click)="logout()">
+  <span class="logout-text">LOG OUT</span>
+  <span class="logout-icon">⎋</span>
+    </button>
+      </div>
+
+    </header>
+
+    <!-- PAGE CONTENT -->
+    <div class="page-body">
+      <router-outlet></router-outlet>
+    </div>
+
+  </main>
+
+</div>
+
+<div class="app-container">
+
+  <!-- Sidebar -->
+  <aside class="sidebar" [class.collapsed]="!isOpen">
+    <nav class="menu">
+
+      <a routerLink="/dashboard" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📊</span>
+        <span class="label" *ngIf="isOpen">Dashboard</span>
+      </a>
+
+      <a routerLink="/student" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">👨‍🎓</span>
+        <span class="label" *ngIf="isOpen">Students</span>
+      </a>
+
+      <a routerLink="/batch" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">💳</span>
+        <span class="label" *ngIf="isOpen">Batch</span>
+      </a>
+
+      <a routerLink="/enrollment" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📝</span>
+        <span class="label" *ngIf="isOpen">Enrollment</span>
+      </a>
+
+      <a routerLink="/reports" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📑</span>
+        <span class="label" *ngIf="isOpen">Fees</span>
+      </a>
+
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="content">
+
+    <!-- TOP HEADER -->
+    <header class="top-header">
+
+      <button class="toggle-btn" (click)="toggleSidebar()">☰</button>
+
+      <div class="user-info">
+        <span class="user-name animated-title">
+          👤 {{ loggedUserData.fullName }}
+        </span>
+
+       <button class="logout-btn-outline" (click)="logout()">
+  <span class="logout-text">LOG OUT</span>
+  <span class="logout-icon">⎋</span>
+    </button>
+      </div>
+
+    </header>
+
+    <!-- PAGE CONTENT -->
+    <div class="page-body">
+      <router-outlet></router-outlet>
+    </div>
+
+  </main>
+
+</div>
+
+<div class="app-container">
+
+  <!-- Sidebar -->
+  <aside class="sidebar" [class.collapsed]="!isOpen">
+    <nav class="menu">
+
+      <a routerLink="/dashboard" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📊</span>
+        <span class="label" *ngIf="isOpen">Dashboard</span>
+      </a>
+
+      <a routerLink="/student" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">👨‍🎓</span>
+        <span class="label" *ngIf="isOpen">Students</span>
+      </a>
+
+      <a routerLink="/batch" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">💳</span>
+        <span class="label" *ngIf="isOpen">Batch</span>
+      </a>
+
+      <a routerLink="/enrollment" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📝</span>
+        <span class="label" *ngIf="isOpen">Enrollment</span>
+      </a>
+
+      <a routerLink="/reports" routerLinkActive="active">
+        <span class="indicator"></span>
+        <span class="icon">📑</span>
+        <span class="label" *ngIf="isOpen">Fees</span>
+      </a>
+
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="content">
+
+    <!-- TOP HEADER -->
+    <header class="top-header">
+
+      <button class="toggle-btn" (click)="toggleSidebar()">☰</button>
+
+      <div class="user-info">
+        <span class="user-name animated-title">
+          👤 {{ loggedUserData.fullName }}
+        </span>
+
+       <button class="logout-btn-outline" (click)="logout()">
+  <span class="logout-text">LOG OUT</span>
+  <span class="logout-icon">⎋</span>
+    </button>
+      </div>
+
+    </header>
+
+    <!-- PAGE CONTENT -->
+    <div class="page-body">
+      <router-outlet></router-outlet>
+    </div>
+
+  </main>
+
+</div>
+
+
+
+
